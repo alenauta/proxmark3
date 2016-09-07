@@ -37,7 +37,7 @@
 #include <assert.h>
 
 #define CONFIDENCE_THRESHOLD	0.95		// Collect nonces until we are certain enough that the following brute force is successfull
-#define GOOD_BYTES_REQUIRED		13          // default 28, could be smaller == faster
+//#define GOOD_BYTES_REQUIRED		13          // default 28, could be smaller == faster
 
 #define END_OF_LIST_MARKER		0xFFFFFFFF
 
@@ -699,7 +699,7 @@ static void simulate_MFplus_RNG(uint32_t test_cuid, uint64_t test_key, uint32_t 
 	
 }
 
-static void simulate_acquire_nonces()
+static void simulate_acquire_nonces(int min_bytes)
 {
 	clock_t time1 = clock();
 	bool filter_flip_checked = false;
@@ -739,7 +739,7 @@ static void simulate_acquire_nonces()
 			}
 		}
 
-	} while (num_good_first_bytes < GOOD_BYTES_REQUIRED);
+	} while (num_good_first_bytes < min_bytes);
 	
 	time1 = clock() - time1;
 	if ( time1 > 0 ) {
@@ -752,7 +752,7 @@ static void simulate_acquire_nonces()
 		
 }
 
-static int acquire_nonces(uint8_t blockNo, uint8_t keyType, uint8_t *key, uint8_t trgBlockNo, uint8_t trgKeyType, bool nonce_file_write, bool slow)
+static int acquire_nonces(uint8_t blockNo, uint8_t keyType, uint8_t *key, uint8_t trgBlockNo, uint8_t trgKeyType, bool nonce_file_write, bool slow, int min_bytes)
 {
 	clock_t time1 = clock();
 	bool initialize = true;
@@ -842,7 +842,7 @@ static int acquire_nonces(uint8_t blockNo, uint8_t keyType, uint8_t *key, uint8_
 					CONFIDENCE_THRESHOLD * 100.0,
 					num_good_first_bytes);
 			}
-			if (num_good_first_bytes >= GOOD_BYTES_REQUIRED) {
+			if (num_good_first_bytes >= min_bytes) {
 				field_off = true;	// switch off field with next SendCommand and then finish
 			}
 		}
@@ -1630,8 +1630,9 @@ static void* crack_states_thread(void* x){
     return NULL;
 }
 
-static void brute_force(void)
+static void brute_force(int min_bytes)
 {
+	thread_count = min_bytes;	// nauta
 	if (known_target_key != -1) {
 		PrintAndLog("Looking for known target key in remaining key space...");
 		TestIfKeyExists(known_target_key);
@@ -1699,7 +1700,7 @@ static void brute_force(void)
 	}
 }
 
-int mfnestedhard(uint8_t blockNo, uint8_t keyType, uint8_t *key, uint8_t trgBlockNo, uint8_t trgKeyType, uint8_t *trgkey, bool nonce_file_read, bool nonce_file_write, bool slow, int tests) 
+int mfnestedhard(uint8_t blockNo, uint8_t keyType, uint8_t *key, uint8_t trgBlockNo, uint8_t trgKeyType, uint8_t *trgkey, bool nonce_file_read, bool nonce_file_write, bool slow, int tests, size_t thread_num, int min_bytes) 
 {
 	// initialize Random number generator
 	time_t t;
@@ -1725,12 +1726,12 @@ int mfnestedhard(uint8_t blockNo, uint8_t keyType, uint8_t *key, uint8_t trgBloc
 		}
 		for (uint32_t i = 0; i < tests; i++) {
 			init_nonce_memory();
-			simulate_acquire_nonces();
+			simulate_acquire_nonces(min_bytes);
 			Tests();
 			printf("Sum(a0) = %d\n", first_byte_Sum);
 			fprintf(fstats, "%d;", first_byte_Sum);
 			generate_candidates(first_byte_Sum, nonces[best_first_bytes[0]].Sum8_guess);
-			brute_force();
+			brute_force(min_bytes);
 			free_nonces_memory();
 			free_statelist_cache();
 			free_candidates_memory(candidates);
@@ -1744,9 +1745,9 @@ int mfnestedhard(uint8_t blockNo, uint8_t keyType, uint8_t *key, uint8_t trgBloc
 				return 3;
 			}
 			Check_for_FilterFlipProperties();
-			num_good_first_bytes = MIN(estimate_second_byte_sum(), GOOD_BYTES_REQUIRED);
+			num_good_first_bytes = MIN(estimate_second_byte_sum(), min_bytes);
 		} else {					// acquire nonces.
-			uint16_t is_OK = acquire_nonces(blockNo, keyType, key, trgBlockNo, trgKeyType, nonce_file_write, slow);
+			uint16_t is_OK = acquire_nonces(blockNo, keyType, key, trgBlockNo, trgKeyType, nonce_file_write, slow, min_bytes);
 			if (is_OK != 0) {
 				return is_OK;
 			}
@@ -1775,7 +1776,7 @@ int mfnestedhard(uint8_t blockNo, uint8_t keyType, uint8_t *key, uint8_t trgBloc
 		if ( time1 > 0 )
 			PrintAndLog("Time for generating key candidates list: %1.0f seconds", ((float)time1)/CLOCKS_PER_SEC);
 	
-		brute_force();
+		brute_force(min_bytes);
 		
 		free_nonces_memory();
 		free_statelist_cache();

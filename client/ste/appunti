@@ -1,0 +1,42 @@
+hf mf cload sergio/A721824E
+hf mf cgetsc 0
+
+
+
+
+
+block   6 data:d8 68 21 21 00 00 00 00 00 00 00 00 b4 01 00 4c	//sergio1
+			   B9 55 27 21 00 00 00 00 00 00 00 00 9F 00 00 26
+			   1A 57 27 21 00 00 00 00 00 00 00 00 A0 00 00 25
+block   6 data:99 71 22 21 00 00 00 00 00 00 00 00 b5 01 00 8c	//sergio2
+block   6 data:11 51 1f 21 00 00 00 00 00 00 00 00 9e 00 00 a8  //ste
+
+block   8 data:60 01 00 00 9f fe ff ff 60 01 00 00 09 f6 09 f6     3.52    96   159
+               38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 f6     3.12   152
+               08 01 00 00 F7 FE FF FF 08 01 00 00 09 F6 09 F6     2.64   64
+block   8 data:38 01 00 00 c7 fe ff ff 38 01 00 00 09 f6 09 f6
+block   8 data:c7 00 00 00 38 ff ff ff c7 00 00 00 09 f6 09 f6
+
+block   9 data:88 01 00 00 77 fe ff ff 88 01 00 00 09 f6 09 f6
+	           60 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6     3.12
+	           38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 F6     2.64   
+block   9 data:60 01 00 00 9f fe ff ff 60 01 00 00 09 f6 09 f6
+block   9 data:ef 00 00 00 10 ff ff ff ef 00 00 00 09 f6 09 f6
+
+
+
+96  159
+56  199
+8   247     +=255
+
+
+
+136 119
+96  159
+56  199		
+
+la somma è sempre 255
+
+hf mf wrbl 8 B 77cb9dd3cd83 610100009efeffff6101000009f609f6
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf rdsc 1 A 6430980e532c

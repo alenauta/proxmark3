@@ -86,7 +86,7 @@ int usage_hf14_nested(void){
 int usage_hf14_hardnested(void){
 	PrintAndLog("Usage:");
 	PrintAndLog("      hf mf hardnested <block number> <key A|B> <key (12 hex symbols)>");
-	PrintAndLog("                       <target block number> <target key A|B> [known target key (12 hex symbols)] [w] [s]");
+	PrintAndLog("                       <target block number> <target key A|B>  <threads number> <min bytes> [known target key (12 hex symbols)] [w] [s]");
 	PrintAndLog("  or  hf mf hardnested r [known target key]");
 	PrintAndLog(" ");
 	PrintAndLog("options:");
@@ -99,7 +99,7 @@ int usage_hf14_hardnested(void){
 	PrintAndLog("samples:");
 	PrintAndLog("      hf mf hardnested 0 A FFFFFFFFFFFF 4 A");
 	PrintAndLog("      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w");
-	PrintAndLog("      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w s");
+	PrintAndLog("      hf mf hardnested 0 A FFFFFFFFFFFF 4 A 4 13 w s");
 	PrintAndLog("      hf mf hardnested r");
 	PrintAndLog("      hf mf hardnested r a0a1a2a3a4a5");
 	PrintAndLog(" ");
@@ -987,6 +987,8 @@ int CmdHF14AMfNestedHard(const char *Cmd) {
 	bool nonce_file_write = false;
 	bool slow = false;
 	int tests = 0;
+	size_t thread_num = 4;		// nauta
+	int min_bytes = 13;		// nauta
 	
 	if (ctmp == 'R' || ctmp == 'r') {
 		nonce_file_read = true;
@@ -998,6 +1000,7 @@ int CmdHF14AMfNestedHard(const char *Cmd) {
 	} else {
 		blockNo = param_get8(Cmd, 0);
 		ctmp = param_getchar(Cmd, 1);
+
 		if (ctmp != 'a' && ctmp != 'A' && ctmp != 'b' && ctmp != 'B') {
 			PrintAndLog("Key type must be A or B");
 			return 1;
@@ -1013,6 +1016,7 @@ int CmdHF14AMfNestedHard(const char *Cmd) {
 		
 		trgBlockNo = param_get8(Cmd, 3);
 		ctmp = param_getchar(Cmd, 4);
+
 		if (ctmp != 'a' && ctmp != 'A' && ctmp != 'b' && ctmp != 'B') {
 			PrintAndLog("Target key type must be A or B");
 			return 1;
@@ -1021,9 +1025,12 @@ int CmdHF14AMfNestedHard(const char *Cmd) {
 			trgKeyType = 1;
 		}
 
-		uint16_t i = 5;
+		thread_num = param_get8(Cmd, 5);	// nauta
+		min_bytes = param_get8(Cmd, 6);	// nauta
 
-		if (!param_gethex(Cmd, 5, trgkey, 12)) {
+		uint16_t i = 7;
+
+		if (!param_gethex(Cmd, 7, trgkey, 12)) {
 			know_target_key = true;
 			i++;
 		}
@@ -1041,16 +1048,18 @@ int CmdHF14AMfNestedHard(const char *Cmd) {
 		}
 	}
 
-	PrintAndLog("--target block no:%3d, target key type:%c, known target key: 0x%02x%02x%02x%02x%02x%02x%s, file action: %s, Slow: %s, Tests: %d ", 
+	PrintAndLog("--target block no:%3d, target key type:%c, known target key: 0x%02x%02x%02x%02x%02x%02x%s, file action: %s, Slow: %s, Tests: %d, Threads: %d, MinBytes: %d", 
 			trgBlockNo, 
 			trgKeyType?'B':'A', 
 			trgkey[0], trgkey[1], trgkey[2], trgkey[3], trgkey[4], trgkey[5],
 			know_target_key ? "" : " (not set)",
 			nonce_file_write ? "write": nonce_file_read ? "read" : "none",
 			slow ? "Yes" : "No",
-			tests);
+			tests,
+			thread_num,
+			min_bytes);
 
-	int16_t isOK = mfnestedhard(blockNo, keyType, key, trgBlockNo, trgKeyType, know_target_key?trgkey:NULL, nonce_file_read, nonce_file_write, slow, tests);
+	int16_t isOK = mfnestedhard(blockNo, keyType, key, trgBlockNo, trgKeyType, know_target_key?trgkey:NULL, nonce_file_read, nonce_file_write, slow, tests, thread_num, min_bytes);
 
 	if (isOK) {
 		switch (isOK) {
