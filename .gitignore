@@ -2,15 +2,15 @@
 # don't push these files to the repository
 
 .history
-*.log
-*.eml
+#*.log
+#*.eml
 *.o
 *.a
 *.d
 *.elf
 *.s19
 *.map
-*.bin
+#*.bin
 *.dll
 *.moc.cpp
 *.z
