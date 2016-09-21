@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 The iceman fork
 ===============
 [![Build Status](https://travis-ci.org/iceman1001/proxmark3.svg?branch=master)](https://travis-ci.org/iceman1001/proxmark3)  [![Coverity Status](https://scan.coverity.com/projects/5117/badge.svg)](https://scan.coverity.com/projects/proxmark3_iceman_fork)  [![Latest release] (https://img.shields.io/github/release/iceman1001/proxmark3.svg)] (https://github.com/iceman1001/proxmark3/releases/latest)
@@ -237,3 +238,16 @@ user jwesthues, at host cq.cx
 
 May 2007, Cambridge MA
 # proxmark
+=======
+Nauta fork
+===============
+
+
+The official Proxmark repository is found here: https://github.com/Proxmark/proxmark3
+
+Forked from https://github.com/iceman1001/proxmark3
+
+
+- Added threads and min bytes to hardnested
+- Added insertcoin script
+>>>>>>> 9290177851cbd8a016b39b069053714667f6bda3

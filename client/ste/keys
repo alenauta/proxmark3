@@ -21,6 +21,7 @@
 
 hf mf hardnested 0 A a0a1a2a3a4a5 28 B
 hf mf chk *1 ? d keys.dic
+<<<<<<< HEAD
 
 
 
@@ -28,3 +29,5 @@ hf mf chk *1 ? d keys.dic
 hf mf chk *1 ? t   (if no default keys: hf mf mifare)
 hf mf nested 1 0 a <key> d
 hf mf dump
+=======
+>>>>>>> 9290177851cbd8a016b39b069053714667f6bda3
