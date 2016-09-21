@@ -1,0 +1,3545 @@
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+e.lua                 A script file
+ndef_dump.lua         A script file
+cmdline.lua           A script file
+htmldump.lua          A script file
+legic.lua             A script file
+test_t55x7_psk.lua    A script file
+tnp3dump.lua          A script file
+dumptoemul.lua        A script file
+tnp3clone.lua         A script file
+didump.lua            A script file
+calypso.lua           A script file
+test_t55x7_fsk.lua    A script file
+mfkeys.lua            A script file
+dumptoemul-mfu.lua    A script file
+emul2dump.lua         A script file
+test_t55x7_bi.lua     A script file
+legic_buffer2card.lua A script file
+hf_read.lua           A script file
+calc_ev1_it.lua       A script file
+test_t55x7_ask.lua    A script file
+remagic.lua           A script file
+emul2html.lua         A script file
+mifare_autopwn.lua    A script file
+parameters.lua        A script file
+14araw.lua            A script file
+Legic_clone.lua       A script file
+tnp3sim.lua           A script file
+calc_mizip.lua        A script file
+formatMifare.lua      A script file
+tracetest.lua         A script file
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+--target block no: 28, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 53648 nonces in 73,8 seconds (43608 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 8 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 21...
+Bitslicing nonces...
+Starting 4 cracking threads to search 34 buckets containing a total of 330323757496 states...
+Success! Tested 1212990092 states, found 1 keys after 281 seconds
+
+Found key: 728d8aca9e4e
+
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+Usage:  hf mf chk <block number>|<*card memory> <key type (A/B/?)> [t|d] [<key (12 hex symbols)>] [<dic (*.dic)>]
+options:
+      h    this help
+      *    all sectors based on card memory, other values then below defaults to 1k
+      			0 - MINI(320 bytes)
+      			1 - 1K
+      			2 - 2K
+      			4 - 4K
+      d    write keys to binary file
+      t    write keys to emulator memory
+
+ 
+samples:
+      hf mf chk 0 A 1234567890ab keys.dic     -- target block 0, Key A
+      hf mf chk *1 ? t                        -- target all blocks, all keys, 1K, write to emul
+      hf mf chk *1 ? d                        -- target all blocks, all keys, 1K, write to file
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+check key[12] 6389120212c8
+check key[13] 73926506d8ec
+check key[14] 622491d7c15c
+check key[15] 728d8aca9e4e
+check key[16] 6d37e09ec0b3
+check key[17] 7dac11be91ce
+check key[18] 6cd271e7b529
+check key[19] 7c4ab46a4eb2
+check key[20] 6a0fcfa15667
+check key[21] 7a3afc18446f
+check key[22] 6b3d494a7db5
+check key[23] 7b94922241b6
+check key[24] 68df13c0b59b
+check key[25] 785bee3ee856
+check key[26] 69dc18ed720a
+check key[27] 79a4f7d2d718
+
+Time in checkkeys: 66005 ticks 11 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  6389120212c8  | 1 |  73926506d8ec  | 1 |
+|007|  622491d7c15c  | 1 |  728d8aca9e4e  | 1 |
+|008|  6d37e09ec0b3  | 1 |  7dac11be91ce  | 1 |
+|009|  6cd271e7b529  | 1 |  7c4ab46a4eb2  | 1 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  69dc18ed720a  | 1 |  79a4f7d2d718  | 1 |
+|013|  68df13c0b59b  | 1 |  785bee3ee856  | 1 |
+|014|  6b3d494a7db5  | 1 |  7b94922241b6  | 1 |
+|015|  6a0fcfa15667  | 1 |  7a3afc18446f  | 1 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+--target block no: 44, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 95424 nonces in 94,3 seconds (60703 nonces/minute)
+Number of first bytes with confidence > 95,0%: 14
+Time for generating key candidates list: 32 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 5a...
+Bitslicing nonces...
+Starting 4 cracking threads to search 289 buckets containing a total of 6315013596504 states...
+Success! Tested 1904610002 states, found 1 keys after 4356 seconds
+
+Found key: 6ea465edf0e2
+
+--target block no: 44, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 96096 nonces in 122,4 seconds (47125 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 1 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 1d...
+Bitslicing nonces...
+Starting 4 cracking threads to search 16 buckets containing a total of 85617124 states...
+Fail! Tested 85617124 states, in 1 seconds
+--target block no: 45, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+#db# Authentication failed. Card timeout.
+#db# AcquireNonces: Auth1 error
+#db# AcquireNonces: Auth1 error
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Auth2 error len=0
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+Waiting for a response from the proxmark...
+Don't forget to cancel its operation first by pressing on the button
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+Acquired a total of 91616 nonces in 121,0 seconds (45430 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 2 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 9d...
+Bitslicing nonces...
+Starting 4 cracking threads to search 16 buckets containing a total of 301579328 states...
+Success! Tested 87999848 states, found 1 keys after 0 seconds
+
+Found key: 7e9592ddb500
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+check key[12] 6389120212c8
+check key[13] 73926506d8ec
+check key[14] 622491d7c15c
+check key[15] 728d8aca9e4e
+check key[16] 6d37e09ec0b3
+check key[17] 7dac11be91ce
+check key[18] 6cd271e7b529
+check key[19] 7c4ab46a4eb2
+check key[20] 6a0fcfa15667
+check key[21] 7a3afc18446f
+check key[22] 6b3d494a7db5
+check key[23] 7b94922241b6
+check key[24] 68df13c0b59b
+check key[25] 785bee3ee856
+check key[26] 69dc18ed720a
+check key[27] 79a4f7d2d718
+check key[28] 6ea465edf0e2
+check key[29] 7e9592ddb500
+
+Time in checkkeys: 73172 ticks 11 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  6389120212c8  | 1 |  73926506d8ec  | 1 |
+|007|  622491d7c15c  | 1 |  728d8aca9e4e  | 1 |
+|008|  6d37e09ec0b3  | 1 |  7dac11be91ce  | 1 |
+|009|  6cd271e7b529  | 1 |  7c4ab46a4eb2  | 1 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  6ea465edf0e2  | 1 |  7e9592ddb500  | 1 |
+|012|  69dc18ed720a  | 1 |  79a4f7d2d718  | 1 |
+|013|  68df13c0b59b  | 1 |  785bee3ee856  | 1 |
+|014|  6b3d494a7db5  | 1 |  7b94922241b6  | 1 |
+|015|  6a0fcfa15667  | 1 |  7a3afc18446f  | 1 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+--target block no: 13, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 59696 nonces in 90,5 seconds (39598 nonces/minute)
+Number of first bytes with confidence > 95,0%: 15
+Time for generating key candidates list: 7 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 0b...
+Bitslicing nonces...
+Starting 4 cracking threads to search 12 buckets containing a total of 185514098052 states...
+Success! Tested 3503964478 states, found 1 keys after 289 seconds
+
+Found key: 66e72c158cab
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+check key[12] 6389120212c8
+check key[13] 73926506d8ec
+check key[14] 622491d7c15c
+check key[15] 728d8aca9e4e
+check key[16] 6d37e09ec0b3
+check key[17] 7dac11be91ce
+check key[18] 6cd271e7b529
+check key[19] 7c4ab46a4eb2
+check key[20] 6a0fcfa15667
+check key[21] 7a3afc18446f
+check key[22] 6b3d494a7db5
+check key[23] 7b94922241b6
+check key[24] 68df13c0b59b
+check key[25] 785bee3ee856
+check key[26] 69dc18ed720a
+check key[27] 79a4f7d2d718
+check key[28] 6ea465edf0e2
+check key[29] 7e9592ddb500
+check key[30] 66e72c158cab
+
+Time in checkkeys: 71401 ticks 11 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  6389120212c8  | 1 |  73926506d8ec  | 1 |
+|007|  622491d7c15c  | 1 |  728d8aca9e4e  | 1 |
+|008|  6d37e09ec0b3  | 1 |  7dac11be91ce  | 1 |
+|009|  6cd271e7b529  | 1 |  7c4ab46a4eb2  | 1 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  6ea465edf0e2  | 1 |  7e9592ddb500  | 1 |
+|012|  69dc18ed720a  | 1 |  79a4f7d2d718  | 1 |
+|013|  68df13c0b59b  | 1 |  785bee3ee856  | 1 |
+|014|  6b3d494a7db5  | 1 |  7b94922241b6  | 1 |
+|015|  6a0fcfa15667  | 1 |  7a3afc18446f  | 1 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+--target block no: 43, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 31472 nonces in 46,0 seconds (41087 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 2 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): a4...
+Bitslicing nonces...
+Starting 4 cracking threads to search 16 buckets containing a total of 294214870 states...
+Fail! Tested 294214870 states, in 1 seconds
+Usage:
+      hf mf hardnested <block number> <key A|B> <key (12 hex symbols)>
+                       <target block number> <target key A|B> [known target key (12 hex symbols)] [w] [s]
+  or  hf mf hardnested r [known target key]
+ 
+options:
+      h    this help
+      w    acquire nonces and write them to binary file nonces.bin
+      s    slower acquisition (required by some non standard cards)
+      r    read nonces.bin and start attack
+      t    tests?
+ 
+samples:
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w s
+      hf mf hardnested r
+      hf mf hardnested r a0a1a2a3a4a5
+ 
+Add the known target key to check if it is present in the remaining key space:
+      sample5: hf mf hardnested 0 A A0A1A2A3A4A5 4 A FFFFFFFFFFFF
+--target block no: 43, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+Usage:
+      hf mf hardnested <block number> <key A|B> <key (12 hex symbols)>
+                       <target block number> <target key A|B> [known target key (12 hex symbols)] [w] [s]
+  or  hf mf hardnested r [known target key]
+ 
+options:
+      h    this help
+      w    acquire nonces and write them to binary file nonces.bin
+      s    slower acquisition (required by some non standard cards)
+      r    read nonces.bin and start attack
+      t    tests?
+ 
+samples:
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w s
+      hf mf hardnested r
+      hf mf hardnested r a0a1a2a3a4a5
+ 
+Add the known target key to check if it is present in the remaining key space:
+      sample5: hf mf hardnested 0 A A0A1A2A3A4A5 4 A FFFFFFFFFFFF
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+check key[12] 6389120212c8
+check key[13] 73926506d8ec
+check key[14] 622491d7c15c
+check key[15] 728d8aca9e4e
+check key[16] 6d37e09ec0b3
+check key[17] 7dac11be91ce
+check key[18] 6cd271e7b529
+check key[19] 7c4ab46a4eb2
+check key[20] 6a0fcfa15667
+check key[21] 7a3afc18446f
+check key[22] 6b3d494a7db5
+check key[23] 7b94922241b6
+check key[24] 68df13c0b59b
+check key[25] 785bee3ee856
+check key[26] 69dc18ed720a
+check key[27] 79a4f7d2d718
+check key[28] 6ea465edf0e2
+check key[29] 7e9592ddb500
+
+Time in checkkeys: 69905 ticks 11 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  6389120212c8  | 1 |  73926506d8ec  | 1 |
+|007|  622491d7c15c  | 1 |  728d8aca9e4e  | 1 |
+|008|  6d37e09ec0b3  | 1 |  7dac11be91ce  | 1 |
+|009|  6cd271e7b529  | 1 |  7c4ab46a4eb2  | 1 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  6ea465edf0e2  | 1 |  7e9592ddb500  | 1 |
+|012|  69dc18ed720a  | 1 |  79a4f7d2d718  | 1 |
+|013|  68df13c0b59b  | 1 |  785bee3ee856  | 1 |
+|014|  6b3d494a7db5  | 1 |  7b94922241b6  | 1 |
+|015|  6a0fcfa15667  | 1 |  7a3afc18446f  | 1 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+Usage:
+      hf mf hardnested <block number> <key A|B> <key (12 hex symbols)>
+                       <target block number> <target key A|B> [known target key (12 hex symbols)] [w] [s]
+  or  hf mf hardnested r [known target key]
+ 
+options:
+      h    this help
+      w    acquire nonces and write them to binary file nonces.bin
+      s    slower acquisition (required by some non standard cards)
+      r    read nonces.bin and start attack
+      t    tests?
+ 
+samples:
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w s
+      hf mf hardnested r
+      hf mf hardnested r a0a1a2a3a4a5
+ 
+Add the known target key to check if it is present in the remaining key space:
+      sample5: hf mf hardnested 0 A A0A1A2A3A4A5 4 A FFFFFFFFFFFF
+Possible options are w and/or s
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+Usage:
+      hf mf hardnested <block number> <key A|B> <key (12 hex symbols)>
+                       <target block number> <target key A|B>  <threads number> <min bytes> [known target key (12 hex symbols)] [w] [s]
+  or  hf mf hardnested r [known target key]
+ 
+options:
+      h    this help
+      w    acquire nonces and write them to binary file nonces.bin
+      s    slower acquisition (required by some non standard cards)
+      r    read nonces.bin and start attack
+      t    tests?
+ 
+samples:
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A 4 13 w s
+      hf mf hardnested r
+      hf mf hardnested r a0a1a2a3a4a5
+ 
+Add the known target key to check if it is present in the remaining key space:
+      sample5: hf mf hardnested 0 A A0A1A2A3A4A5 4 A FFFFFFFFFFFF
+--target block no: 40, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0, Threads: 4, MinBytes: 28
+Acquired a total of 61152 nonces in 90,3 seconds (40637 nonces/minute)
+Number of first bytes with confidence > 95,0%: 27
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): a4...
+Bitslicing nonces...
+Starting 4 cracking threads to search 16 buckets containing a total of 190761286 states...
+Fail! Tested 190761286 states, in 1 seconds
+--target block no: 41, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0, Threads: 4, MinBytes: 28
+Acquired a total of 66304 nonces in 85,1 seconds (46726 nonces/minute)
+Number of first bytes with confidence > 95,0%: 28
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): a4...
+Bitslicing nonces...
+Starting 4 cracking threads to search 16 buckets containing a total of 172586014 states...
+Fail! Tested 172586014 states, in 1 seconds
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+--target block no: 42, target key type:A, known target key: 0x000000000000 (not set), file action: write, Slow: No, Tests: 0, Threads: 4, MinBytes: 32
+Writing acquired nonces to binary file nonces.bin
+Acquired a total of 74144 nonces in 100,5 seconds (44280 nonces/minute)
+Number of first bytes with confidence > 95,0%: 33
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): a4...
+Bitslicing nonces...
+Starting 4 cracking threads to search 16 buckets containing a total of 148732476 states...
+Fail! Tested 148732476 states, in 1 seconds
+Usage:
+      hf mf hardnested <block number> <key A|B> <key (12 hex symbols)>
+                       <target block number> <target key A|B>  <threads number> <min bytes> [known target key (12 hex symbols)] [w] [s]
+  or  hf mf hardnested r [known target key]
+ 
+options:
+      h    this help
+      w    acquire nonces and write them to binary file nonces.bin
+      s    slower acquisition (required by some non standard cards)
+      r    read nonces.bin and start attack
+      t    tests?
+ 
+samples:
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A 4 13 w s
+      hf mf hardnested r
+      hf mf hardnested r a0a1a2a3a4a5
+ 
+Add the known target key to check if it is present in the remaining key space:
+      sample5: hf mf hardnested 0 A A0A1A2A3A4A5 4 A FFFFFFFFFFFF
+--target block no:  0, target key type:A, known target key: 0x000000000000 (not set), file action: read, Slow: No, Tests: 0, Threads: 4, MinBytes: 13
+Reading nonces from file nonces.bin...
+Read 74144 nonces from file. cuid=8079dc1d, Block=42, Keytype=A
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 2 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): a4...
+Bitslicing nonces...
+Starting 4 cracking threads to search 16 buckets containing a total of 256748602 states...
+Success! Tested 206047074 states, found 1 keys after 0 seconds
+
+Found key: 6f9a5df47984
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+check key[12] 6389120212c8
+check key[13] 73926506d8ec
+check key[14] 622491d7c15c
+check key[15] 728d8aca9e4e
+check key[16] 6d37e09ec0b3
+check key[17] 7dac11be91ce
+check key[18] 6cd271e7b529
+check key[19] 7c4ab46a4eb2
+check key[20] 6a0fcfa15667
+check key[21] 7a3afc18446f
+check key[22] 6b3d494a7db5
+check key[23] 7b94922241b6
+check key[24] 68df13c0b59b
+check key[25] 785bee3ee856
+check key[26] 69dc18ed720a
+check key[27] 79a4f7d2d718
+check key[28] 6ea465edf0e2
+check key[29] 7e9592ddb500
+check key[30] 6f9a5df47984
+
+Time in checkkeys: 70651 ticks 11 seconds
+
+testing to read key B...
+Reading block 43
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  6389120212c8  | 1 |  73926506d8ec  | 1 |
+|007|  622491d7c15c  | 1 |  728d8aca9e4e  | 1 |
+|008|  6d37e09ec0b3  | 1 |  7dac11be91ce  | 1 |
+|009|  6cd271e7b529  | 1 |  7c4ab46a4eb2  | 1 |
+|010|  6f9a5df47984  | 1 |  ffffffffffff  | 0 |
+|011|  6ea465edf0e2  | 1 |  7e9592ddb500  | 1 |
+|012|  69dc18ed720a  | 1 |  79a4f7d2d718  | 1 |
+|013|  68df13c0b59b  | 1 |  785bee3ee856  | 1 |
+|014|  6b3d494a7db5  | 1 |  7b94922241b6  | 1 |
+|015|  6a0fcfa15667  | 1 |  7a3afc18446f  | 1 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+--target block no: 42, target key type:B, known target key: 0x000000000000 (not set), file action: write, Slow: No, Tests: 0, Threads: 4, MinBytes: 32
+Writing acquired nonces to binary file nonces.bin
+Acquired a total of 45920 nonces in 59,0 seconds (46660 nonces/minute)
+Number of first bytes with confidence > 95,0%: 32
+Time for generating key candidates list: 8 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): bf...
+Bitslicing nonces...
+Starting 4 cracking threads to search 68 buckets containing a total of 800637732 states...
+Success! Tested 256397350 states, found 1 keys after 0 seconds
+
+Found key: 7fcf300af94a
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+check key[12] 6389120212c8
+check key[13] 73926506d8ec
+check key[14] 622491d7c15c
+check key[15] 728d8aca9e4e
+check key[16] 6d37e09ec0b3
+check key[17] 7dac11be91ce
+check key[18] 6cd271e7b529
+check key[19] 7c4ab46a4eb2
+check key[20] 6a0fcfa15667
+check key[21] 7a3afc18446f
+check key[22] 6b3d494a7db5
+check key[23] 7b94922241b6
+check key[24] 68df13c0b59b
+check key[25] 785bee3ee856
+check key[26] 69dc18ed720a
+check key[27] 79a4f7d2d718
+check key[28] 6ea465edf0e2
+check key[29] 7e9592ddb500
+check key[30] 6f9a5df47984
+check key[31] 7fcf300af94a
+
+Time in checkkeys: 70681 ticks 11 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  6389120212c8  | 1 |  73926506d8ec  | 1 |
+|007|  622491d7c15c  | 1 |  728d8aca9e4e  | 1 |
+|008|  6d37e09ec0b3  | 1 |  7dac11be91ce  | 1 |
+|009|  6cd271e7b529  | 1 |  7c4ab46a4eb2  | 1 |
+|010|  6f9a5df47984  | 1 |  7fcf300af94a  | 1 |
+|011|  6ea465edf0e2  | 1 |  7e9592ddb500  | 1 |
+|012|  69dc18ed720a  | 1 |  79a4f7d2d718  | 1 |
+|013|  68df13c0b59b  | 1 |  785bee3ee856  | 1 |
+|014|  6b3d494a7db5  | 1 |  7b94922241b6  | 1 |
+|015|  6a0fcfa15667  | 1 |  7a3afc18446f  | 1 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+|-----------------------------------------|
+|------ Reading sector access bits...-----|
+|-----------------------------------------|
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+|-----------------------------------------|
+|----- Dumping all blocks to file... -----|
+|-----------------------------------------|
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  1.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  1.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  1.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  1.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  2.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  2.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  2.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  2.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  3.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  3.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  3.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  3.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  4.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  4.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  4.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  4.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  5.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  5.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  5.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  5.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  6.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  6.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  6.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  6.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  7.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  7.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  7.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  7.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  8.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  8.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  8.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  8.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  9.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  9.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  9.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  9.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 10.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 10.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 10.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 10.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 11.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 11.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 11.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 11.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 12.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 12.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 12.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 12.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 13.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 13.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 13.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 13.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 14.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 14.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 14.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 14.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 15.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 15.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 15.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 15.
+Dumped 64 blocks (1024 bytes) to file dumpdata.bin
+ UID : 80 79 DC 1D 
+ATQA : 00 04
+ SAK : 08 [2]
+TYPE : NXP MIFARE CLASSIC 1k | Plus 2k SL1
+proprietary non iso14443-4 card found, RATS not supported
+Answers to magic commands (GEN1): NO
+ UID : A7 21 82 4E 
+ATQA : 00 04
+ SAK : 08 [2]
+TYPE : NXP MIFARE CLASSIC 1k | Plus 2k SL1
+proprietary non iso14443-4 card found, RATS not supported
+Answers to magic commands (GEN1): YES
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+It loads magic Chinese card from the file `filename.eml`
+or from emulator memory (option `e`)
+Usage:  hf mf cload <file name w/o `.eml`>
+   or:  hf mf cload e 
+ sample: hf mf cload filename
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+e.lua                 A script file
+ndef_dump.lua         A script file
+cmdline.lua           A script file
+htmldump.lua          A script file
+legic.lua             A script file
+test_t55x7_psk.lua    A script file
+tnp3dump.lua          A script file
+dumptoemul.lua        A script file
+tnp3clone.lua         A script file
+didump.lua            A script file
+calypso.lua           A script file
+test_t55x7_fsk.lua    A script file
+mfkeys.lua            A script file
+dumptoemul-mfu.lua    A script file
+emul2dump.lua         A script file
+test_t55x7_bi.lua     A script file
+legic_buffer2card.lua A script file
+hf_read.lua           A script file
+calc_ev1_it.lua       A script file
+test_t55x7_ask.lua    A script file
+remagic.lua           A script file
+emul2html.lua         A script file
+mifare_autopwn.lua    A script file
+parameters.lua        A script file
+14araw.lua            A script file
+Legic_clone.lua       A script file
+tnp3sim.lua           A script file
+calc_mizip.lua        A script file
+formatMifare.lua      A script file
+tracetest.lua         A script file
+File not found or locked.
+Loaded from file: ste/8079DC1D.eml
+ UID : 80 79 DC 1D 
+ATQA : 00 04
+ SAK : 08 [2]
+TYPE : NXP MIFARE CLASSIC 1k | Plus 2k SL1
+proprietary non iso14443-4 card found, RATS not supported
+Answers to magic commands (GEN1): YES
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:1 key type:A key:64 30 98 0E 53 2C  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 00 00 58 E6 0F 00 00 00 00 00 00 00 00 00 00 B5 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0B 
+data   : 11 51 1F 21 00 00 00 00 00 00 00 00 9E 00 00 A8 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:1 key type:A key:64 30 98 0E 53 2F  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+Usage:  hf mf wrbl    <block number> <key A/B> <key (12 hex symbols)> <block data (32 hex symbols)>
+        sample: hf mf wrbl 0 A FFFFFFFFFFFF 000102030405060708090A0B0C0D0E0F
+--block no:8, key type:A, key:67 B5 FC 94 16 E2 
+--data: C7 00 00 00 38 FF FF FF C7 00 00 00 09 F6 09 F6 
+#db# Cmd Error: 04
+#db# Write block error
+#db# WRITE BLOCK FINISHED
+isOk:00
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : C7 00 00 00 38 FF FF FF C7 00 00 00 09 F6 09 F6 
+data   : EF 00 00 00 10 FF FF FF EF 00 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+#db# Debug level: 4
+--block no:8, key type:A, key:67 B5 FC 94 16 E2 
+--data: C7 00 00 00 38 FF FF FF C7 00 00 00 09 F6 09 F6 
+#db# ISO14443A Timeout set to 1060 (10ms)
+#db# rand tag nonce len: 4
+#db# auth uid: 8079dc1d nt: 222ff5f4
+#db# Cmd Error: 04
+#db# Write block error
+#db# WRITE BLOCK FINISHED
+isOk:00
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: C7 00 00 00 38 FF FF FF C7 00 00 00 09 F6 09 F6 
+#db# ISO14443A Timeout set to 1060 (10ms)
+#db# rand tag nonce len: 4
+#db# auth uid: 8079dc1d nt: 15d76baa
+#db# WRITE BLOCK FINISHED
+isOk:01
+#db# Debug level: 2
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : C7 00 00 00 38 FF FF FF C7 00 00 00 09 F6 09 F6 
+data   : EF 00 00 00 10 FF FF FF EF 00 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: 60 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 60 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6 
+data   : EF 00 00 00 10 FF FF FF EF 00 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:9, key type:B, key:77 CB 9D D3 CD 83 
+--data: 88 01 00 00 77 FE FF FF 88 01 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 60 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6 
+data   : 88 01 00 00 77 FE FF FF 88 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 F6 
+data   : 60 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--sector no:1 key type:A key:64 30 98 0E 53 2C  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 00 00 58 E6 0F 00 00 00 00 00 00 00 00 00 00 B5 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0B 
+data   : B9 55 27 21 00 00 00 00 00 00 00 00 9F 00 00 26 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 08 01 00 00 F7 FE FF FF 08 01 00 00 09 F6 09 F6 
+data   : 38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--sector no:1 key type:A key:64 30 98 0E 53 2C  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 00 00 58 E6 0F 00 00 00 00 00 00 00 00 00 00 B5 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0B 
+data   : 1A 57 27 21 00 00 00 00 00 00 00 00 A0 00 00 25 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: 60 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: 61 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 61 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6 
+data   : 38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 F6 
+data   : 38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: 61 01 00 00 9E FE FF FF 60 01 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 61 01 00 00 9E FE FF FF 60 01 00 00 09 F6 09 F6 
+data   : 38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: 61 01 00 00 9E FE FF FF 61 01 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 61 01 00 00 9E FE FF FF 61 01 00 00 09 F6 09 F6 
+data   : 38 01 00 00 C7 FE FF FF 38 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 19 01 00 00 E6 FE FF FF 19 01 00 00 09 F6 09 F6 
+data   : 61 01 00 00 9E FE FF FF 61 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: 20 03 00 00 9E FE FF FF 20 03 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: 20 03 00 00 DF FC FF FF 20 03 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+e.lua                 A script file
+ndef_dump.lua         A script file
+cmdline.lua           A script file
+htmldump.lua          A script file
+legic.lua             A script file
+test_t55x7_psk.lua    A script file
+tnp3dump.lua          A script file
+dumptoemul.lua        A script file
+tnp3clone.lua         A script file
+didump.lua            A script file
+calypso.lua           A script file
+test_t55x7_fsk.lua    A script file
+mfkeys.lua            A script file
+dumptoemul-mfu.lua    A script file
+emul2dump.lua         A script file
+test_t55x7_bi.lua     A script file
+legic_buffer2card.lua A script file
+hf_read.lua           A script file
+calc_ev1_it.lua       A script file
+test_t55x7_ask.lua    A script file
+remagic.lua           A script file
+emul2html.lua         A script file
+mifare_autopwn.lua    A script file
+parameters.lua        A script file
+14araw.lua            A script file
+Legic_clone.lua       A script file
+tnp3sim.lua           A script file
+calc_mizip.lua        A script file
+formatMifare.lua      A script file
+tracetest.lua         A script file
+insertcoin.lua        A script file
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+e.lua                 A script file
+ndef_dump.lua         A script file
+cmdline.lua           A script file
+htmldump.lua          A script file
+legic.lua             A script file
+test_t55x7_psk.lua    A script file
+tnp3dump.lua          A script file
+dumptoemul.lua        A script file
+tnp3clone.lua         A script file
+didump.lua            A script file
+calypso.lua           A script file
+test_t55x7_fsk.lua    A script file
+mfkeys.lua            A script file
+dumptoemul-mfu.lua    A script file
+emul2dump.lua         A script file
+test_t55x7_bi.lua     A script file
+legic_buffer2card.lua A script file
+hf_read.lua           A script file
+calc_ev1_it.lua       A script file
+test_t55x7_ask.lua    A script file
+remagic.lua           A script file
+emul2html.lua         A script file
+mifare_autopwn.lua    A script file
+parameters.lua        A script file
+14araw.lua            A script file
+Legic_clone.lua       A script file
+tnp3sim.lua           A script file
+calc_mizip.lua        A script file
+formatMifare.lua      A script file
+tracetest.lua         A script file
+insertcoin.lua        A script file
+iso14443a card select failed
+help             This help
+awid             { AWID RFIDs... }
+em4x             { EM4X RFIDs... }
+guard            { Guardall RFIDs... }
+hid              { HID RFIDs... }
+hitag            { HITAG RFIDs... }
+io               { IOPROX RFIDs... }
+jablotron        { JABLOTRON RFIDs... }
+nedap            { NEDAP RFIDs... }
+pcf7931          { PCF7931 RFIDs... }
+presco           { Presco RFIDs... }
+pyramid          { Farpointe/Pyramid RFIDs... }
+ti               { TI RFIDs... }
+t55xx            { T55xx RFIDs... }
+viking           { Viking RFIDs... }
+config           Set config for LF sampling, bit/sample, decimation, frequency
+cmdread          <off period> <'0' period> <'1' period> <command> ['h' 134] 
+		-- Modulate LF reader field to send command before read (all periods in microseconds)
+flexdemod        Demodulate samples for FlexPass
+indalademod      ['224'] -- Demodulate samples for Indala 64 bit UID (option '224' for 224 bit)
+indalaclone      <UID> ['l']-- Clone Indala to T55x7 (tag must be in antenna)(UID in HEX)(option 'l' for 224 UID
+read             ['s' silent] Read 125/134 kHz LF ID-only tag. Do 'lf read h' for help
+search           [offline] ['u'] Read and Search for valid known tag (in offline mode it you can load first then search) 
+		-- 'u' to search for unknown tags
+sim              [GAP] -- Simulate LF tag from buffer with optional GAP (in microseconds)
+simask           [clock] [invert <1|0>] [biphase/manchester/raw <'b'|'m'|'r'>] [msg separator 's'] [d <hexdata>] 
+		-- Simulate LF ASK tag from demodbuffer or input
+simfsk           [c <clock>] [i] [H <fcHigh>] [L <fcLow>] [d <hexdata>] 
+		-- Simulate LF FSK tag from demodbuffer or input
+simpsk           [1|2|3] [c <clock>] [i] [r <carrier>] [d <raw hex to sim>] 
+		-- Simulate LF PSK tag from demodbuffer or input
+simbidir         Simulate LF tag (with bidirectional data transmission between reader and tag)
+snoop            ['l'|'h'|<divisor>] [trigger threshold]-- Snoop LF (l:125khz, h:134khz)
+vchdemod         ['clone'] -- Demodulate samples for VeriChip
+help             This help
+askedgedetect    [threshold] Adjust Graph for manual ASK demod using the length of sample differences to detect the edge of a wave (use 20-45, def:25)
+askem410xdemod   [clock] [invert<0|1>] [maxErr] -- Demodulate an EM410x tag from GraphBuffer (args optional)
+askgproxiidemod  Demodulate a G Prox II tag from GraphBuffer
+askvikingdemod   Demodulate a Viking AM tag from GraphBuffer
+autocorr         [window length] [g] -- Autocorrelation over window - g to save back to GraphBuffer (overwrite)
+biphaserawdecode [offset] [invert<0|1>] [maxErr] -- Biphase decode bin stream in DemodBuffer (offset = 0|1 bits to shift the decode start)
+bin2hex          <digits> -- Converts binary to hexadecimal
+bitsamples       Get raw samples as bitstring
+buffclear        Clear sample buffer and graph window
+dec              Decimate samples
+detectclock      [<a|f|n|p>] Detect ASK, FSK, NRZ, PSK clock rate of wave in GraphBuffer
+fdxbdemod        Demodulate a FDX-B ISO11784/85 Biphase tag from GraphBuffer
+fskawiddemod     Demodulate an AWID FSK tag from GraphBuffer
+fskhiddemod      Demodulate a HID FSK tag from GraphBuffer
+fskiodemod       Demodulate an IO Prox FSK tag from GraphBuffer
+fskpyramiddemod  Demodulate a Pyramid FSK tag from GraphBuffer
+fskparadoxdemod  Demodulate a Paradox FSK tag from GraphBuffer
+getbitstream     Convert GraphBuffer's >=1 values to 1 and <1 to 0
+grid             <x> <y> -- overlay grid on graph window, use zero value to turn off either
+hexsamples       <bytes> [<offset>] -- Dump big buffer as hex bytes
+hex2bin          <hexadecimal> -- Converts hexadecimal to binary
+hide             Hide graph window
+hpf              Remove DC offset from trace
+load             <filename> -- Load trace (to graph window
+ltrim            <samples> -- Trim samples from left of trace
+rtrim            <location to end trace> -- Trim samples from right of trace
+manrawdecode     [invert] [maxErr] -- Manchester decode binary stream in DemodBuffer
+norm             Normalize max/min to +/-128
+plot             Show graph window (hit 'h' in window for keystroke help)
+printdemodbuffer [x] [o] <offset> [l] <length> -- print the data in the DemodBuffer - 'x' for hex output
+pskindalademod   [clock] [invert<0|1>] -- Demodulate an indala tag (PSK1) from GraphBuffer (args optional)
+psknexwatchdemod Demodulate a NexWatch tag (nexkey, quadrakey) (PSK1) from GraphBuffer
+rawdemod         [modulation] ... <options> -see help (h option) -- Demodulate the data in the GraphBuffer and output binary
+samples          [512 - 40000] -- Get raw samples for graph window (GraphBuffer)
+save             <filename> -- Save trace (from graph window)
+scale            <int> -- Set cursor display scale
+setdebugmode     <0|1|2> -- Turn on or off Debugging Level for lf demods
+shiftgraphzero   <shift> -- Shift 0 for Graphed wave + or - shift value
+dirthreshold     <thres up> <thres down> -- Max rising higher up-thres/ Min falling lower down-thres, keep rest as prev.
+tune             Get hw tune samples for graph window
+undec            Un-decimate samples by 2
+zerocrossings    Count time between zero-crossings
+iir              apply IIR buttersworth filter on plotdata
+help             This help
+lcr              Generate final byte for XOR LRC
+crc              Stub method for CRC evaluations
+chksum           Checksum with adding, masking and one's complement
+dates            Look for datestamps in a given array of bytes
+tea              Crypto TEA test
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+help             This help
+detectreader     ['l'|'h'] -- Detect external reader field (option 'l' or 'h' to limit to LF or HF)
+fpgaoff          Set FPGA off
+lcd              <HEX command> <count> -- Send command/data to LCD
+lcdreset         Hardware reset LCD
+readmem          [address] -- Read memory at decimal address from flash
+reset            Reset the Proxmark3
+setlfdivisor     <19 - 255> -- Drive LF antenna at 12Mhz/(divisor+1)
+setmux           <loraw|hiraw|lopkd|hipkd> -- Set the ADC mux to a specific value
+tune             Measure antenna tuning
+version          Show version information about the connected Proxmark
+status           Show runtime status information about the connected Proxmark
+ping             Test if the pm3 is responsive
+help             This help
+awid             { AWID RFIDs... }
+em4x             { EM4X RFIDs... }
+guard            { Guardall RFIDs... }
+hid              { HID RFIDs... }
+hitag            { HITAG RFIDs... }
+io               { IOPROX RFIDs... }
+jablotron        { JABLOTRON RFIDs... }
+nedap            { NEDAP RFIDs... }
+pcf7931          { PCF7931 RFIDs... }
+presco           { Presco RFIDs... }
+pyramid          { Farpointe/Pyramid RFIDs... }
+ti               { TI RFIDs... }
+t55xx            { T55xx RFIDs... }
+viking           { Viking RFIDs... }
+config           Set config for LF sampling, bit/sample, decimation, frequency
+cmdread          <off period> <'0' period> <'1' period> <command> ['h' 134] 
+		-- Modulate LF reader field to send command before read (all periods in microseconds)
+flexdemod        Demodulate samples for FlexPass
+indalademod      ['224'] -- Demodulate samples for Indala 64 bit UID (option '224' for 224 bit)
+indalaclone      <UID> ['l']-- Clone Indala to T55x7 (tag must be in antenna)(UID in HEX)(option 'l' for 224 UID
+read             ['s' silent] Read 125/134 kHz LF ID-only tag. Do 'lf read h' for help
+search           [offline] ['u'] Read and Search for valid known tag (in offline mode it you can load first then search) 
+		-- 'u' to search for unknown tags
+sim              [GAP] -- Simulate LF tag from buffer with optional GAP (in microseconds)
+simask           [clock] [invert <1|0>] [biphase/manchester/raw <'b'|'m'|'r'>] [msg separator 's'] [d <hexdata>] 
+		-- Simulate LF ASK tag from demodbuffer or input
+simfsk           [c <clock>] [i] [H <fcHigh>] [L <fcLow>] [d <hexdata>] 
+		-- Simulate LF FSK tag from demodbuffer or input
+simpsk           [1|2|3] [c <clock>] [i] [r <carrier>] [d <raw hex to sim>] 
+		-- Simulate LF PSK tag from demodbuffer or input
+simbidir         Simulate LF tag (with bidirectional data transmission between reader and tag)
+snoop            ['l'|'h'|<divisor>] [trigger threshold]-- Snoop LF (l:125khz, h:134khz)
+vchdemod         ['clone'] -- Demodulate samples for VeriChip
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+help             This help
+awid             { AWID RFIDs... }
+em4x             { EM4X RFIDs... }
+guard            { Guardall RFIDs... }
+hid              { HID RFIDs... }
+hitag            { HITAG RFIDs... }
+io               { IOPROX RFIDs... }
+jablotron        { JABLOTRON RFIDs... }
+nedap            { NEDAP RFIDs... }
+pcf7931          { PCF7931 RFIDs... }
+presco           { Presco RFIDs... }
+pyramid          { Farpointe/Pyramid RFIDs... }
+ti               { TI RFIDs... }
+t55xx            { T55xx RFIDs... }
+viking           { Viking RFIDs... }
+config           Set config for LF sampling, bit/sample, decimation, frequency
+cmdread          <off period> <'0' period> <'1' period> <command> ['h' 134] 
+		-- Modulate LF reader field to send command before read (all periods in microseconds)
+flexdemod        Demodulate samples for FlexPass
+indalademod      ['224'] -- Demodulate samples for Indala 64 bit UID (option '224' for 224 bit)
+indalaclone      <UID> ['l']-- Clone Indala to T55x7 (tag must be in antenna)(UID in HEX)(option 'l' for 224 UID
+read             ['s' silent] Read 125/134 kHz LF ID-only tag. Do 'lf read h' for help
+search           [offline] ['u'] Read and Search for valid known tag (in offline mode it you can load first then search) 
+		-- 'u' to search for unknown tags
+sim              [GAP] -- Simulate LF tag from buffer with optional GAP (in microseconds)
+simask           [clock] [invert <1|0>] [biphase/manchester/raw <'b'|'m'|'r'>] [msg separator 's'] [d <hexdata>] 
+		-- Simulate LF ASK tag from demodbuffer or input
+simfsk           [c <clock>] [i] [H <fcHigh>] [L <fcLow>] [d <hexdata>] 
+		-- Simulate LF FSK tag from demodbuffer or input
+simpsk           [1|2|3] [c <clock>] [i] [r <carrier>] [d <raw hex to sim>] 
+		-- Simulate LF PSK tag from demodbuffer or input
+simbidir         Simulate LF tag (with bidirectional data transmission between reader and tag)
+snoop            ['l'|'h'|<divisor>] [trigger threshold]-- Snoop LF (l:125khz, h:134khz)
+vchdemod         ['clone'] -- Demodulate samples for VeriChip
+#db# LF Sampling config: 
+#db#   [q] divisor:           95 
+#db#   [b] bps:               8 
+#db#   [d] decimation:        1 
+#db#   [a] averaging:         1 
+#db#   [t] trigger threshold: 0 
+#db# Done, saved 40000 out of 40000 seen samples at 8 bits/sample
+#db# buffer samples: 6c 6c 6c 6c 6d 6c 6c 6c ...
+
+# LF antenna: 38,91 V @   125.00 kHz
+# LF antenna: 24,89 V @   134.00 kHz
+# LF optimal: 40,42 V @   126,32 kHz
+# HF antenna: 33,53 V @    13.56 MHz
+Displaying LF tuning graph. Divisor 89 is 134khz, 95 is 125khz.
+
+
+
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : F0 02 00 00 0F FD FF FF F0 02 00 00 09 F6 09 F6 
+data   : 20 03 00 00 DF FC FF FF 20 03 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: 20 03 00 00 DF FC FF FF 20 03 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 20 03 00 00 DF FC FF FF 20 03 00 00 09 F6 09 F6 
+data   : 20 03 00 00 DF FC FF FF 20 03 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+data   : 20 03 00 00 DF FC FF FF 20 03 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 97 00 00 00 68 FF FF FF 97 00 00 00 09 F6 09 F6 
+data   : C7 00 00 00 38 FF FF FF C7 00 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--sector no:2 key type:A key:67 B5 FC 94 16 E1  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+It loads magic Chinese card from the file `filename.eml`
+or from emulator memory (option `e`)
+Usage:  hf mf cload <file name w/o `.eml`>
+   or:  hf mf cload e 
+ sample: hf mf cload filename
+Loaded from file: sergio/A721824E.eml
+--sector no:2 key type:A key:67 B5 FC 94 16 E1  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+--sector no:2 key type:B key:C0 48 BD AE 7E 8D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 60 01 00 00 9F FE FF FF 60 01 00 00 09 F6 09 F6 
+data   : 88 01 00 00 77 FE FF FF 88 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:C0 48 BD AE 7E 8D 
+--data: E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:B key:C0 48 BD AE 7E 8D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+data   : 88 01 00 00 77 FE FF FF 88 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:C0 48 BD AE 7E 8D 
+--data: 10 27 00 00 EF D8 FF FF 10 27 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:B key:C0 48 BD AE 7E 8D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 10 27 00 00 EF D8 FF FF 10 27 00 00 09 F6 09 F6 
+data   : 88 01 00 00 77 FE FF FF 88 01 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:8, key type:B, key:C0 48 BD AE 7E 8D 
+--data: E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help
+14a              { ISO14443A RFIDs... }
+14b              { ISO14443B RFIDs... }
+15               { ISO15693 RFIDs... }
+epa              { German Identification Card... }
+legic            { LEGIC RFIDs... }
+iclass           { ICLASS RFIDs... }
+mf               { MIFARE RFIDs... }
+mfu              { MIFARE Ultralight RFIDs... }
+mfdes            { MIFARE Desfire RFIDs... }
+topaz            { TOPAZ (NFC Type 1) RFIDs... }
+tune             Continuously measure HF antenna tuning
+list             List protocol data in trace buffer
+search           Search for known HF tags [preliminary]
+snoop            <samples to skip (10000)> <triggers to skip (1)> Generic LF/HF Snoop in Testing stage
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:0 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : A7 21 82 4E 4A 08 04 00 62 63 64 65 66 67 68 69 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:0 key type:B key:C2 7A A2 BD 0D 3D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : A7 21 82 4E 4A 08 04 00 62 63 64 65 66 67 68 69 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:2 key type:B key:C2 7A A2 BD 0D 3D  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+--sector no:2 key type:B key:C0 48 BD AE 7E 8D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : A0 03 00 00 5F FC FF FF A0 03 00 00 09 F6 09 F6 
+data   : E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf wrbl    <block number> <key A/B> <key (12 hex symbols)> <block data (32 hex symbols)>
+        sample: hf mf wrbl 0 A FFFFFFFFFFFF 000102030405060708090A0B0C0D0E0F
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D 
+--data: D0 36 DC E9 A5 EC 08 77 8F 00 C0 48 BD AE 7E 8E 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:B key:C0 48 BD AE 7E 8D  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+--sector no:2 key type:B key:C0 48 BD AE 7E 8E  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : A0 03 00 00 5F FC FF FF A0 03 00 00 09 F6 09 F6 
+data   : E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:11, key type:B, key:C0 48 BD AE 7E 8E 
+--data: D0 36 DC E9 A5 EC 08 77 8F 00 C0 48 BD AE 7E 8D 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:B key:C0 48 BD AE 7E 8E  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+--sector no:2 key type:B key:C0 48 BD AE 7E 8D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : A0 03 00 00 5F FC FF FF A0 03 00 00 09 F6 09 F6 
+data   : E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+Usage:  hf mf rdbl    <block number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdbl 0 A FFFFFFFFFFFF 
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+e.lua                 A script file
+ndef_dump.lua         A script file
+cmdline.lua           A script file
+htmldump.lua          A script file
+legic.lua             A script file
+test_t55x7_psk.lua    A script file
+tnp3dump.lua          A script file
+dumptoemul.lua        A script file
+tnp3clone.lua         A script file
+didump.lua            A script file
+calypso.lua           A script file
+test_t55x7_fsk.lua    A script file
+mfkeys.lua            A script file
+dumptoemul-mfu.lua    A script file
+emul2dump.lua         A script file
+test_t55x7_bi.lua     A script file
+legic_buffer2card.lua A script file
+hf_read.lua           A script file
+calc_ev1_it.lua       A script file
+test_t55x7_ask.lua    A script file
+remagic.lua           A script file
+emul2html.lua         A script file
+mifare_autopwn.lua    A script file
+parameters.lua        A script file
+14araw.lua            A script file
+Legic_clone.lua       A script file
+tnp3sim.lua           A script file
+calc_mizip.lua        A script file
+formatMifare.lua      A script file
+tracetest.lua         A script file
+insertcoin.lua        A script file
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+e.lua                 A script file
+ndef_dump.lua         A script file
+cmdline.lua           A script file
+htmldump.lua          A script file
+legic.lua             A script file
+test_t55x7_psk.lua    A script file
+tnp3dump.lua          A script file
+dumptoemul.lua        A script file
+tnp3clone.lua         A script file
+didump.lua            A script file
+calypso.lua           A script file
+test_t55x7_fsk.lua    A script file
+mfkeys.lua            A script file
+dumptoemul-mfu.lua    A script file
+emul2dump.lua         A script file
+test_t55x7_bi.lua     A script file
+legic_buffer2card.lua A script file
+accesscalc.lua        A script file
+hf_read.lua           A script file
+calc_ev1_it.lua       A script file
+test_t55x7_ask.lua    A script file
+remagic.lua           A script file
+emul2html.lua         A script file
+mifare_autopwn.lua    A script file
+parameters.lua        A script file
+14araw.lua            A script file
+Legic_clone.lua       A script file
+tnp3sim.lua           A script file
+calc_mizip.lua        A script file
+formatMifare.lua      A script file
+tracetest.lua         A script file
+insertcoin.lua        A script file
+Usage:  hf mf rdbl    <block number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdbl 0 A FFFFFFFFFFFF 
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D  
+#db# READ BLOCK FINISHED
+isOk:01 data:00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:3, key type:B, key:C0 48 BD AE 7E 8D  
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+isOk:00
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D  
+#db# READ BLOCK FINISHED
+isOk:01 data:00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D  
+#db# READ BLOCK FINISHED
+isOk:01 data:00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--sector no:2 key type:B key:C0 48 BD AE 7E 8D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : A0 03 00 00 5F FC FF FF A0 03 00 00 09 F6 09 F6 
+data   : E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D 
+--data: D0 36 DC E9 A5 EC 19 66 9E 00 C0 48 BD AE 7E 8D 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--sector no:2 key type:B key:C0 48 BD AE 7E 8D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : A0 03 00 00 5F FC FF FF A0 03 00 00 09 F6 09 F6 
+data   : E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 19 66 9E 00 00 00 00 00 00 00 
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D 
+--data: D0 36 DC E9 A5 EC 08 77 8F 00 C0 48 BD AE 7E 8D 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--block no:8, key type:B, key:C0 48 BD AE 7E 8D 
+--data: E8 03 00 00 17 FC FF FF E8 03 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D 
+--data: D0 36 DC E9 A5 EC 09 67 8F 00 C0 48 BD AE 7E 8D 
+Sending bytes to proxmark failed - offline
+Command execute timeout
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D 
+--data: D0 36 DC E9 A5 EC 09 67 8F 00 C0 48 BD AE 7E 8D 
+Sending bytes to proxmark failed - offline
+Command execute timeout
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D 
+--data: D0 36 DC E9 A5 EC 09 67 8F 00 C0 48 BD AE 7E 8D 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--block no:11, key type:B, key:C0 48 BD AE 7E 8D 
+--data: D0 36 DC E9 A5 EC 08 77 8F 00 C0 48 BD AE 7E 8D 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--block no:8, key type:B, key:C0 48 BD AE 7E 8D 
+--data: D0 07 00 00 2F F8 FF FF D0 07 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+ UID : 80 79 DC 1D 
+ATQA : 00 04
+ SAK : 08 [2]
+TYPE : NXP MIFARE CLASSIC 1k | Plus 2k SL1
+proprietary non iso14443-4 card found, RATS not supported
+Answers to magic commands (GEN1): NO
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+e.lua                 A script file
+ndef_dump.lua         A script file
+cmdline.lua           A script file
+htmldump.lua          A script file
+legic.lua             A script file
+test_t55x7_psk.lua    A script file
+tnp3dump.lua          A script file
+dumptoemul.lua        A script file
+tnp3clone.lua         A script file
+didump.lua            A script file
+calypso.lua           A script file
+test_t55x7_fsk.lua    A script file
+mfkeys.lua            A script file
+dumptoemul-mfu.lua    A script file
+emul2dump.lua         A script file
+test_t55x7_bi.lua     A script file
+legic_buffer2card.lua A script file
+accesscalc.lua        A script file
+hf_read.lua           A script file
+calc_ev1_it.lua       A script file
+test_t55x7_ask.lua    A script file
+remagic.lua           A script file
+emul2html.lua         A script file
+mifare_autopwn.lua    A script file
+parameters.lua        A script file
+14araw.lua            A script file
+Legic_clone.lua       A script file
+tnp3sim.lua           A script file
+calc_mizip.lua        A script file
+formatMifare.lua      A script file
+tracetest.lua         A script file
+insertcoin.lua        A script file
+--block no:8, key type:B, key:77 CB 9D D3 CD 83 
+--data: B8 0B 00 00 47 F4 FF FF B8 0B 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+--block no:8, key type:B, key:C0 48 BD AE 7E 8D 
+--data: B8 0B 00 00 47 F4 FF FF B8 0B 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help
+awid             { AWID RFIDs... }
+em4x             { EM4X RFIDs... }
+guard            { Guardall RFIDs... }
+hid              { HID RFIDs... }
+hitag            { HITAG RFIDs... }
+io               { IOPROX RFIDs... }
+jablotron        { JABLOTRON RFIDs... }
+nedap            { NEDAP RFIDs... }
+pcf7931          { PCF7931 RFIDs... }
+presco           { Presco RFIDs... }
+pyramid          { Farpointe/Pyramid RFIDs... }
+ti               { TI RFIDs... }
+t55xx            { T55xx RFIDs... }
+viking           { Viking RFIDs... }
+config           Set config for LF sampling, bit/sample, decimation, frequency
+cmdread          <off period> <'0' period> <'1' period> <command> ['h' 134] 
+		-- Modulate LF reader field to send command before read (all periods in microseconds)
+flexdemod        Demodulate samples for FlexPass
+indalademod      ['224'] -- Demodulate samples for Indala 64 bit UID (option '224' for 224 bit)
+indalaclone      <UID> ['l']-- Clone Indala to T55x7 (tag must be in antenna)(UID in HEX)(option 'l' for 224 UID
+read             ['s' silent] Read 125/134 kHz LF ID-only tag. Do 'lf read h' for help
+search           [offline] ['u'] Read and Search for valid known tag (in offline mode it you can load first then search) 
+		-- 'u' to search for unknown tags
+sim              [GAP] -- Simulate LF tag from buffer with optional GAP (in microseconds)
+simask           [clock] [invert <1|0>] [biphase/manchester/raw <'b'|'m'|'r'>] [msg separator 's'] [d <hexdata>] 
+		-- Simulate LF ASK tag from demodbuffer or input
+simfsk           [c <clock>] [i] [H <fcHigh>] [L <fcLow>] [d <hexdata>] 
+		-- Simulate LF FSK tag from demodbuffer or input
+simpsk           [1|2|3] [c <clock>] [i] [r <carrier>] [d <raw hex to sim>] 
+		-- Simulate LF PSK tag from demodbuffer or input
+simbidir         Simulate LF tag (with bidirectional data transmission between reader and tag)
+snoop            ['l'|'h'|<divisor>] [trigger threshold]-- Snoop LF (l:125khz, h:134khz)
+vchdemod         ['clone'] -- Demodulate samples for VeriChip
+Reading 30000 bytes from device memory
+
+Data fetched
+Samples @ 8 bits/smpl, decimation 1:1 
+NOTE: some demods output possible binary
+  if it finds something that looks like a tag
+False Positives ARE possible
+
+
+Checking for known tags:
+
+EM410x pattern found: 
+
+EM TAG ID      : 4A008F201C
+Unique TAG ID  : 5200F10438
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 09379868
+DEZ 10         : 0009379868
+DEZ 5.5        : 00143.08220
+DEZ 3.5A       : 074.08220
+DEZ 3.5B       : 000.08220
+DEZ 3.5C       : 143.08220
+DEZ 14/IK2     : 00317836959772
+DEZ 15/IK3     : 000352203113528
+DEZ 20/ZK      : 05020000150100040308
+}
+Other          : 08220_143_09379868
+Pattern Paxton : 1252220444 [0x4AA35E1C]
+Pattern 1      : 3085336 [0x2F1418]
+Pattern Sebury : 8220 15 991260  [0x201C 0xF 0xF201C]
+
+Valid EM410x ID Found!
+Reading 30000 bytes from device memory
+
+Data fetched
+Samples @ 8 bits/smpl, decimation 1:1 
+NOTE: some demods output possible binary
+  if it finds something that looks like a tag
+False Positives ARE possible
+
+
+Checking for known tags:
+
+EM410x pattern found: 
+
+EM TAG ID      : 0000000001
+Unique TAG ID  : 0000000080
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 00000001
+DEZ 10         : 0000000001
+DEZ 5.5        : 00000.00001
+DEZ 3.5A       : 000.00001
+DEZ 3.5B       : 000.00001
+DEZ 3.5C       : 000.00001
+DEZ 14/IK2     : 00000000000001
+DEZ 15/IK3     : 000000000000128
+DEZ 20/ZK      : 00000000000000000800
+}
+Other          : 00001_000_00000001
+Pattern Paxton : 1326593 [0x143E01]
+Pattern 1      : 512 [0x200]
+Pattern Sebury : 1 0 1  [0x1 0x0 0x1]
+
+Valid EM410x ID Found!
+help             This help
+awid             { AWID RFIDs... }
+em4x             { EM4X RFIDs... }
+guard            { Guardall RFIDs... }
+hid              { HID RFIDs... }
+hitag            { HITAG RFIDs... }
+io               { IOPROX RFIDs... }
+jablotron        { JABLOTRON RFIDs... }
+nedap            { NEDAP RFIDs... }
+pcf7931          { PCF7931 RFIDs... }
+presco           { Presco RFIDs... }
+pyramid          { Farpointe/Pyramid RFIDs... }
+ti               { TI RFIDs... }
+t55xx            { T55xx RFIDs... }
+viking           { Viking RFIDs... }
+config           Set config for LF sampling, bit/sample, decimation, frequency
+cmdread          <off period> <'0' period> <'1' period> <command> ['h' 134] 
+		-- Modulate LF reader field to send command before read (all periods in microseconds)
+flexdemod        Demodulate samples for FlexPass
+indalademod      ['224'] -- Demodulate samples for Indala 64 bit UID (option '224' for 224 bit)
+indalaclone      <UID> ['l']-- Clone Indala to T55x7 (tag must be in antenna)(UID in HEX)(option 'l' for 224 UID
+read             ['s' silent] Read 125/134 kHz LF ID-only tag. Do 'lf read h' for help
+search           [offline] ['u'] Read and Search for valid known tag (in offline mode it you can load first then search) 
+		-- 'u' to search for unknown tags
+sim              [GAP] -- Simulate LF tag from buffer with optional GAP (in microseconds)
+simask           [clock] [invert <1|0>] [biphase/manchester/raw <'b'|'m'|'r'>] [msg separator 's'] [d <hexdata>] 
+		-- Simulate LF ASK tag from demodbuffer or input
+simfsk           [c <clock>] [i] [H <fcHigh>] [L <fcLow>] [d <hexdata>] 
+		-- Simulate LF FSK tag from demodbuffer or input
+simpsk           [1|2|3] [c <clock>] [i] [r <carrier>] [d <raw hex to sim>] 
+		-- Simulate LF PSK tag from demodbuffer or input
+simbidir         Simulate LF tag (with bidirectional data transmission between reader and tag)
+snoop            ['l'|'h'|<divisor>] [trigger threshold]-- Snoop LF (l:125khz, h:134khz)
+vchdemod         ['clone'] -- Demodulate samples for VeriChip
+help             This help
+em410xdemod      [findone] -- Extract ID from EM410x tag (option 0 for continuous loop, 1 for only 1 tag)
+em410xread       [clock rate] -- Extract ID from EM410x tag in GraphBuffer
+em410xsim        <UID> -- Simulate EM410x tag
+em410xwatch      ['h'] -- Watches for EM410x 125/134 kHz tags (option 'h' for 134)
+em410xspoof      ['h'] --- Watches for EM410x 125/134 kHz tags, and replays them. (option 'h' for 134)
+em410xwrite      <UID> <'0' T5555> <'1' T55x7> [clock rate] -- Write EM410x UID to T5555(Q5) or T55x7 tag, optionally setting clock rate
+em4x50read       Extract data from EM4x50 tag
+readword         <Word> -- Read EM4xxx word data
+readwordPWD      <Word> <Password> -- Read EM4xxx word data in password mode
+writeword        <Data> <Word> -- Write EM4xxx word data
+writewordPWD     <Data> <Word> <Password> -- Write EM4xxx word data in password mode
+EM410x pattern found: 
+
+EM TAG ID      : 0000000001
+Unique TAG ID  : 0000000080
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 00000001
+DEZ 10         : 0000000001
+DEZ 5.5        : 00000.00001
+DEZ 3.5A       : 000.00001
+DEZ 3.5B       : 000.00001
+DEZ 3.5C       : 000.00001
+DEZ 14/IK2     : 00000000000001
+DEZ 15/IK3     : 000000000000128
+DEZ 20/ZK      : 00000000000000000800
+}
+Other          : 00001_000_00000001
+Pattern Paxton : 1326593 [0x143E01]
+Pattern 1      : 512 [0x200]
+Pattern Sebury : 1 0 1  [0x1 0x0 0x1]
+EM410x pattern found: 
+
+EM TAG ID      : 0000000001
+Unique TAG ID  : 0000000080
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 00000001
+DEZ 10         : 0000000001
+DEZ 5.5        : 00000.00001
+DEZ 3.5A       : 000.00001
+DEZ 3.5B       : 000.00001
+DEZ 3.5C       : 000.00001
+DEZ 14/IK2     : 00000000000001
+DEZ 15/IK3     : 000000000000128
+DEZ 20/ZK      : 00000000000000000800
+}
+Other          : 00001_000_00000001
+Pattern Paxton : 1326593 [0x143E01]
+Pattern 1      : 512 [0x200]
+Pattern Sebury : 1 0 1  [0x1 0x0 0x1]
+EM410x pattern found: 
+
+EM TAG ID      : 0000000001
+Unique TAG ID  : 0000000080
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 00000001
+DEZ 10         : 0000000001
+DEZ 5.5        : 00000.00001
+DEZ 3.5A       : 000.00001
+DEZ 3.5B       : 000.00001
+DEZ 3.5C       : 000.00001
+DEZ 14/IK2     : 00000000000001
+DEZ 15/IK3     : 000000000000128
+DEZ 20/ZK      : 00000000000000000800
+}
+Other          : 00001_000_00000001
+Pattern Paxton : 1326593 [0x143E01]
+Pattern 1      : 512 [0x200]
+Pattern Sebury : 1 0 1  [0x1 0x0 0x1]
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+#db# Stopped
+Reading 30000 bytes from device memory
+
+Data fetched
+Samples @ 8 bits/smpl, decimation 1:1 
+NOTE: some demods output possible binary
+  if it finds something that looks like a tag
+False Positives ARE possible
+
+
+Checking for known tags:
+
+EM410x pattern found: 
+
+EM TAG ID      : 4A008F201C
+Unique TAG ID  : 5200F10438
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 09379868
+DEZ 10         : 0009379868
+DEZ 5.5        : 00143.08220
+DEZ 3.5A       : 074.08220
+DEZ 3.5B       : 000.08220
+DEZ 3.5C       : 143.08220
+DEZ 14/IK2     : 00317836959772
+DEZ 15/IK3     : 000352203113528
+DEZ 20/ZK      : 05020000150100040308
+}
+Other          : 08220_143_09379868
+Pattern Paxton : 1252220444 [0x4AA35E1C]
+Pattern 1      : 3085336 [0x2F1418]
+Pattern Sebury : 8220 15 991260  [0x201C 0xF 0xF201C]
+
+Valid EM410x ID Found!
+Error! ID is required.
+
+Error! Card type required.
+
+Error! ID is required.
+
+Writing T55x7 tag with UID 0x4a008f201c (clock rate: 64)
+#db# Started writing T55x7 tag ...
+#db# Clock rate: 64
+#db# Tag T55x7 written with 0xffa680047c500f0c
+
+Writing T5555 tag with UID 0x4a008f201c
+#db# Started writing T55x7 tag ...
+#db# Clock rate: 64
+#db# Tag T55x7 written with 0xffa680047c500f0c
+
+Reading 30000 bytes from device memory
+
+Data fetched
+Samples @ 8 bits/smpl, decimation 1:1 
+NOTE: some demods output possible binary
+  if it finds something that looks like a tag
+False Positives ARE possible
+
+
+Checking for known tags:
+
+EM410x pattern found: 
+
+EM TAG ID      : 0000000001
+Unique TAG ID  : 0000000080
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 00000001
+DEZ 10         : 0000000001
+DEZ 5.5        : 00000.00001
+DEZ 3.5A       : 000.00001
+DEZ 3.5B       : 000.00001
+DEZ 3.5C       : 000.00001
+DEZ 14/IK2     : 00000000000001
+DEZ 15/IK3     : 000000000000128
+DEZ 20/ZK      : 00000000000000000800
+}
+Other          : 00001_000_00000001
+Pattern Paxton : 1326593 [0x143E01]
+Pattern 1      : 512 [0x200]
+Pattern Sebury : 1 0 1  [0x1 0x0 0x1]
+
+Valid EM410x ID Found!
+Writing T55x7 tag with UID 0x4a008f201c (clock rate: 64)
+#db# Started writing T55x7 tag ...
+#db# Clock rate: 64
+#db# Tag T55x7 written with 0xffa680047c500f0c
+
+Reading 30000 bytes from device memory
+
+Data fetched
+Samples @ 8 bits/smpl, decimation 1:1 
+NOTE: some demods output possible binary
+  if it finds something that looks like a tag
+False Positives ARE possible
+
+
+Checking for known tags:
+
+EM410x pattern found: 
+
+EM TAG ID      : 0000000001
+Unique TAG ID  : 0000000080
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 00000001
+DEZ 10         : 0000000001
+DEZ 5.5        : 00000.00001
+DEZ 3.5A       : 000.00001
+DEZ 3.5B       : 000.00001
+DEZ 3.5C       : 000.00001
+DEZ 14/IK2     : 00000000000001
+DEZ 15/IK3     : 000000000000128
+DEZ 20/ZK      : 00000000000000000800
+}
+Other          : 00001_000_00000001
+Pattern Paxton : 1326593 [0x143E01]
+Pattern 1      : 512 [0x200]
+Pattern Sebury : 1 0 1  [0x1 0x0 0x1]
+
+Valid EM410x ID Found!
+#db# EM TAG ID: 0000000001 - (00001_000_00000001)
+#db# EM TAG ID: 4a008f201c - (08220_143_09379868)
+Writing T55x7 tag with UID 0x4a008f201c (clock rate: 64)
+#db# Started writing T55x7 tag ...
+#db# Clock rate: 64
+#db# Tag T55x7 written with 0xffa680047c500f0c
+
+Reading 8201 bytes from device memory
+
+Data fetched
+Samples @ 8 bits/smpl, decimation 1:1 
+EM410x pattern found: 
+
+EM TAG ID      : 4A008F201C
+Unique TAG ID  : 5200F10438
+
+Possible de-scramble patterns
+HoneyWell IdentKey {
+DEZ 8          : 09379868
+DEZ 10         : 0009379868
+DEZ 5.5        : 00143.08220
+DEZ 3.5A       : 074.08220
+DEZ 3.5B       : 000.08220
+DEZ 3.5C       : 143.08220
+DEZ 14/IK2     : 00317836959772
+DEZ 15/IK3     : 000352203113528
+DEZ 20/ZK      : 05020000150100040308
+}
+Other          : 08220_143_09379868
+Pattern Paxton : 1252220444 [0x4AA35E1C]
+Pattern 1      : 3085336 [0x2F1418]
+Pattern Sebury : 8220 15 991260  [0x201C 0xF 0xF201C]
+Starting simulating UID 4A008F201C  clock: 64
+Press pm3-button to about simulation
+
+Starting to simulate
+[[[ Cached information ]]]
+
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+
+[[[ Cached information ]]]
+
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+
+Sending bytes to proxmark failed
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+[[[ Cached information ]]]
+
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Button pressed. Aborted.
+
+
+ UID : 37 A7 84 4E 
+ATQA : 00 04
+ SAK : 08 [2]
+TYPE : NXP MIFARE CLASSIC 1k | Plus 2k SL1
+proprietary non iso14443-4 card found, RATS not supported
+Answers to magic commands (GEN1): NO
+
+Valid ISO14443-A Tag Found - Quiting Search
+
+Usage:
+ all sectors:  hf mf nested  <card memory> <block number> <key A/B> <key (12 hex symbols)> [t,d]
+ one sector:   hf mf nested  o <block number> <key A/B> <key (12 hex symbols)>
+               <target block number> <target key A/B> [t]
+options:
+      h    this help
+      card memory - 0 - MINI(320 bytes), 1 - 1K, 2 - 2K, 4 - 4K, <other> - 1K
+      t    transfer keys into emulator memory
+      d    write keys to binary file
+ 
+samples:
+      hf mf nested 1 0 A FFFFFFFFFFFF 
+      hf mf nested 1 0 A FFFFFFFFFFFF t 
+      hf mf nested 1 0 A FFFFFFFFFFFF d 
+      hf mf nested o 0 A FFFFFFFFFFFF 4 A
+Card isn't vulnerable to Darkside attack (its random number generator seems to be based on the wellknown
+generating polynomial with 16 effective bits only, but shows unexpected behaviour.
+
+uid(37a7844e) nt(a19a88eb) ks(0100000000000000) nr(00000000)
+
+parity is all zero, try special attack. Just wait for few more seconds...
+one B
+Key not found (lfsr_common_prefix list is null).
+Failing is expected to happen in 25% of all cases. Trying again with a different reader nonce...
+Card isn't vulnerable to Darkside attack (its random number generator seems to be based on the wellknown
+generating polynomial with 16 effective bits only, but shows unexpected behaviour.
+
+uid(37a7844e) nt(a25a8bbd) ks(0900000000000000) nr(00000001)
+
+parity is all zero, try special attack. Just wait for few more seconds...
+one A
+Key not found (lfsr_common_prefix list is null).
+Failing is expected to happen in 25% of all cases. Trying again with a different reader nonce...
+Card isn't vulnerable to Darkside attack (its random number generator seems to be based on the wellknown
+generating polynomial with 16 effective bits only, but shows unexpected behaviour.
+
+uid(37a7844e) nt(75f52d59) ks(0700000000000000) nr(00000002)
+
+parity is all zero, try special attack. Just wait for few more seconds...
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+[[[ Cached information ]]]
+
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+
+Usage:  hf mf chk <block number>|<*card memory> <key type (A/B/?)> [t|d] [<key (12 hex symbols)>] [<dic (*.dic)>]
+options:
+      h    this help
+      *    all sectors based on card memory, other values then below defaults to 1k
+      			0 - MINI(320 bytes)
+      			1 - 1K
+      			2 - 2K
+      			4 - 4K
+      d    write keys to binary file
+      t    write keys to emulator memory
+
+ 
+samples:
+      hf mf chk 0 A 1234567890ab keys.dic     -- target block 0, Key A
+      hf mf chk *1 ? t                        -- target all blocks, all keys, 1K, write to emul
+      hf mf chk *1 ? d                        -- target all blocks, all keys, 1K, write to file
+No key specified, trying default keys
+key[ 0] ffffffffffff
+key[ 1] 000000000000
+key[ 2] a0a1a2a3a4a5
+key[ 3] b0b1b2b3b4b5
+key[ 4] aabbccddeeff
+key[ 5] 4d3a99c351dd
+key[ 6] 1a982c7e459a
+key[ 7] d3f7d3f7d3f7
+key[ 8] 714c5c886e97
+key[ 9] 587ee5f9350f
+key[10] a0478cc39091
+key[11] 533cb6c723f6
+key[12] 8fd0a4f256e9
+
+Time in checkkeys: 17282 ticks 3 seconds
+
+testing to read key B...
+Reading block 3
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+Card isn't vulnerable to Darkside attack (its random number generator seems to be based on the wellknown
+generating polynomial with 16 effective bits only, but shows unexpected behaviour.
+
+uid(37a7844e) nt(a4da8c11) ks(0800000000000000) nr(00000000)
+
+parity is all zero, try special attack. Just wait for few more seconds...
+one B
+Key not found (lfsr_common_prefix list is null).
+Failing is expected to happen in 25% of all cases. Trying again with a different reader nonce...
+Card isn't vulnerable to Darkside attack (its random number generator seems to be based on the wellknown
+generating polynomial with 16 effective bits only, but shows unexpected behaviour.
+
+uid(37a7844e) nt(554ca814) ks(0d00000000000000) nr(00000001)
+
+parity is all zero, try special attack. Just wait for few more seconds...
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+Usage:
+ all sectors:  hf mf nested  <card memory> <block number> <key A/B> <key (12 hex symbols)> [t,d]
+ one sector:   hf mf nested  o <block number> <key A/B> <key (12 hex symbols)>
+               <target block number> <target key A/B> [t]
+options:
+      h    this help
+      card memory - 0 - MINI(320 bytes), 1 - 1K, 2 - 2K, 4 - 4K, <other> - 1K
+      t    transfer keys into emulator memory
+      d    write keys to binary file
+ 
+samples:
+      hf mf nested 1 0 A FFFFFFFFFFFF 
+      hf mf nested 1 0 A FFFFFFFFFFFF t 
+      hf mf nested 1 0 A FFFFFFFFFFFF d 
+      hf mf nested o 0 A FFFFFFFFFFFF 4 A
+Testing known keys. Sector count=16
+Time to check 6 known keys: 13761 ticks 2 seconds
+
+enter nested...
+UID: 37a7844e target block:  0 key type: B  -- Found key [fb8ed3c1ec8d]
+UID: 37a7844e target block:  4 key type: A  -- Found key [ea47c90f0192]
+UID: 37a7844e target block:  4 key type: B
+UID: 37a7844e target block:  8 key type: A  -- Found key [e9c2ad95445c]
+UID: 37a7844e target block:  8 key type: B
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 12 key type: B
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 20 key type: A
+UID: 37a7844e target block: 20 key type: B
+UID: 37a7844e target block: 24 key type: A
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 28 key type: A
+UID: 37a7844e target block: 28 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 32 key type: B
+UID: 37a7844e target block: 36 key type: A  -- Found key [e2a520e6e797]
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 40 key type: A
+UID: 37a7844e target block: 40 key type: B
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 52 key type: A
+UID: 37a7844e target block: 52 key type: B
+UID: 37a7844e target block: 56 key type: A
+UID: 37a7844e target block: 56 key type: B
+UID: 37a7844e target block: 60 key type: A  -- Found key [e4789ea004d9]
+UID: 37a7844e target block: 60 key type: B
+UID: 37a7844e target block:  4 key type: B
+UID: 37a7844e target block:  8 key type: B  -- Found key [f9bcccd29f3d]
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 12 key type: B
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 20 key type: A
+UID: 37a7844e target block: 20 key type: B
+UID: 37a7844e target block: 24 key type: A
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 28 key type: A
+UID: 37a7844e target block: 28 key type: B  -- Found key [fcfadbcbccf0]
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 32 key type: B
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 40 key type: A  -- Found key [e1ed0cf52b3a]
+UID: 37a7844e target block: 40 key type: B
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 52 key type: A
+UID: 37a7844e target block: 52 key type: B
+UID: 37a7844e target block: 56 key type: A  -- Found key [e54a184b2f0b]
+UID: 37a7844e target block: 56 key type: B
+UID: 37a7844e target block: 60 key type: B
+UID: 37a7844e target block:  4 key type: B
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 12 key type: B  -- Found key [f8ca6117dc58]
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 20 key type: A  -- Found key [ee8554c386f5]
+UID: 37a7844e target block: 20 key type: B
+UID: 37a7844e target block: 24 key type: A
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 28 key type: A
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 32 key type: B  -- Found key [f3db40bfc370]
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 40 key type: B  -- Found key [f1b8610babf4]
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 52 key type: A
+UID: 37a7844e target block: 52 key type: B  -- Found key [f62cbf3fbae8]
+UID: 37a7844e target block: 56 key type: B
+UID: 37a7844e target block: 60 key type: B
+UID: 37a7844e target block:  4 key type: B
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 16 key type: B  -- Found key [ff8ddaa047e3]
+UID: 37a7844e target block: 20 key type: B
+UID: 37a7844e target block: 24 key type: A
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 28 key type: A  -- Found key [ec53c0d693e2]
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 52 key type: A  -- Found key [e6a842c1e725]
+UID: 37a7844e target block: 56 key type: B
+UID: 37a7844e target block: 60 key type: B  -- Found key [f44dad1916d1]
+UID: 37a7844e target block:  4 key type: B
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 20 key type: B  -- Found key [fe35b9b39e3f]
+UID: 37a7844e target block: 24 key type: A  -- Found key [edfe43034076]
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 56 key type: B  -- Found key [f5e3c3231308]
+UID: 37a7844e target block:  4 key type: B  -- Found key [fa3c5d2d58b6]
+UID: 37a7844e target block: 12 key type: A  -- Found key [e8907d14de15]
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 44 key type: A  -- Found key [e0d334eca25c]
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 48 key type: B  -- Found key [f7d3a6d385a6]
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 36 key type: B  -- Found key [f23de56b1c0c]
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 16 key type: A  -- Found key [ef1fda7f2db7]
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A
+UID: 37a7844e target block: 24 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 44 key type: B
+UID: 37a7844e target block: 48 key type: A  -- Found key [e7ab49ec20b4]
+Time in nested: 88333528 ticks 77 seconds
+
+trying to read key B...
+Reading block 27
+#db# READ BLOCK FINISHED
+Reading block 47
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  fb8ed3c1ec8d  | 1 |
+|001|  ea47c90f0192  | 1 |  fa3c5d2d58b6  | 1 |
+|002|  e9c2ad95445c  | 1 |  f9bcccd29f3d  | 1 |
+|003|  e8907d14de15  | 1 |  f8ca6117dc58  | 1 |
+|004|  ef1fda7f2db7  | 1 |  ff8ddaa047e3  | 1 |
+|005|  ee8554c386f5  | 1 |  fe35b9b39e3f  | 1 |
+|006|  edfe43034076  | 1 |  000000000000  | 0 |
+|007|  ec53c0d693e2  | 1 |  fcfadbcbccf0  | 1 |
+|008|  000000000000  | 0 |  f3db40bfc370  | 1 |
+|009|  e2a520e6e797  | 1 |  f23de56b1c0c  | 1 |
+|010|  e1ed0cf52b3a  | 1 |  f1b8610babf4  | 1 |
+|011|  e0d334eca25c  | 1 |  000000000000  | 0 |
+|012|  e7ab49ec20b4  | 1 |  f7d3a6d385a6  | 1 |
+|013|  e6a842c1e725  | 1 |  f62cbf3fbae8  | 1 |
+|014|  e54a184b2f0b  | 1 |  f5e3c3231308  | 1 |
+|015|  e4789ea004d9  | 1 |  f44dad1916d1  | 1 |
+|---|----------------|---|----------------|---|
+Testing known keys. Sector count=16
+Time to check 6 known keys: 11936 ticks 2 seconds
+
+enter nested...
+UID: 37a7844e target block:  0 key type: B  -- Found key [fb8ed3c1ec8d]
+UID: 37a7844e target block:  4 key type: A
+UID: 37a7844e target block:  4 key type: B  -- Found key [fa3c5d2d58b6]
+UID: 37a7844e target block:  8 key type: A  -- Found key [e9c2ad95445c]
+UID: 37a7844e target block:  8 key type: B
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 12 key type: B
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 20 key type: A
+UID: 37a7844e target block: 20 key type: B
+UID: 37a7844e target block: 24 key type: A
+UID: 37a7844e target block: 24 key type: B  -- Found key [fde534078a52]
+UID: 37a7844e target block: 28 key type: A  -- Found key [ec53c0d693e2]
+UID: 37a7844e target block: 28 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 32 key type: B  -- Found key [f3db40bfc370]
+UID: 37a7844e target block: 36 key type: A
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 40 key type: A
+UID: 37a7844e target block: 40 key type: B
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 44 key type: B  -- Found key [f0e2c3dce7be]
+UID: 37a7844e target block: 48 key type: A  -- Found key [e7ab49ec20b4]
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 52 key type: A  -- Found key [e6a842c1e725]
+UID: 37a7844e target block: 52 key type: B
+UID: 37a7844e target block: 56 key type: A
+UID: 37a7844e target block: 56 key type: B
+UID: 37a7844e target block: 60 key type: A  -- Found key [e4789ea004d9]
+UID: 37a7844e target block: 60 key type: B
+UID: 37a7844e target block:  4 key type: A
+UID: 37a7844e target block:  8 key type: B  -- Found key [f9bcccd29f3d]
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 12 key type: B
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 20 key type: A  -- Found key [ee8554c386f5]
+UID: 37a7844e target block: 20 key type: B
+UID: 37a7844e target block: 24 key type: A
+UID: 37a7844e target block: 28 key type: B
+UID: 37a7844e target block: 32 key type: A
+UID: 37a7844e target block: 36 key type: A
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 40 key type: A
+UID: 37a7844e target block: 40 key type: B
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 52 key type: B
+UID: 37a7844e target block: 56 key type: A
+UID: 37a7844e target block: 56 key type: B  -- Found key [f5e3c3231308]
+UID: 37a7844e target block: 60 key type: B  -- Found key [f44dad1916d1]
+UID: 37a7844e target block:  4 key type: A
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 12 key type: B
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 20 key type: B
+UID: 37a7844e target block: 24 key type: A  -- Found key [edfe43034076]
+UID: 37a7844e target block: 28 key type: B
+UID: 37a7844e target block: 32 key type: A  -- Found key [e340b19f920d]
+UID: 37a7844e target block: 36 key type: A
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 40 key type: A
+UID: 37a7844e target block: 40 key type: B
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 52 key type: B  -- Found key [f62cbf3fbae8]
+UID: 37a7844e target block: 56 key type: A
+UID: 37a7844e target block:  4 key type: A
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 12 key type: B
+UID: 37a7844e target block: 16 key type: A
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 20 key type: B  -- Found key [fe35b9b39e3f]
+UID: 37a7844e target block: 28 key type: B  -- Found key [fcfadbcbccf0]
+UID: 37a7844e target block: 36 key type: A  -- Found key [e2a520e6e797]
+UID: 37a7844e target block: 36 key type: B
+UID: 37a7844e target block: 40 key type: A
+UID: 37a7844e target block: 40 key type: B
+UID: 37a7844e target block: 44 key type: A
+UID: 37a7844e target block: 48 key type: B
+UID: 37a7844e target block: 56 key type: A
+UID: 37a7844e target block:  4 key type: A
+UID: 37a7844e target block: 12 key type: A
+UID: 37a7844e target block: 12 key type: B  -- Found key [f8ca6117dc58]
+UID: 37a7844e target block: 16 key type: A  -- Found key [ef1fda7f2db7]
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 36 key type: B  -- Found key [f23de56b1c0c]
+UID: 37a7844e target block: 40 key type: A
+UID: 37a7844e target block: 40 key type: B
+UID: 37a7844e target block: 44 key type: A  -- Found key [e0d334eca25c]
+UID: 37a7844e target block: 48 key type: B  -- Found key [f7d3a6d385a6]
+UID: 37a7844e target block: 56 key type: A
+UID: 37a7844e target block:  4 key type: A
+UID: 37a7844e target block: 12 key type: A  -- Found key [e8907d14de15]
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 40 key type: A
+UID: 37a7844e target block: 40 key type: B  -- Found key [f1b8610babf4]
+UID: 37a7844e target block: 56 key type: A
+UID: 37a7844e target block:  4 key type: A  -- Found key [ea47c90f0192]
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 40 key type: A  -- Found key [e1ed0cf52b3a]
+UID: 37a7844e target block: 56 key type: A
+UID: 37a7844e target block: 16 key type: B
+UID: 37a7844e target block: 56 key type: A  -- Found key [e54a184b2f0b]
+UID: 37a7844e target block: 16 key type: B  -- Found key [ff8ddaa047e3]
+Time in nested: 70013264 ticks 63 seconds
+
+trying to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  fb8ed3c1ec8d  | 1 |
+|001|  ea47c90f0192  | 1 |  fa3c5d2d58b6  | 1 |
+|002|  e9c2ad95445c  | 1 |  f9bcccd29f3d  | 1 |
+|003|  e8907d14de15  | 1 |  f8ca6117dc58  | 1 |
+|004|  ef1fda7f2db7  | 1 |  ff8ddaa047e3  | 1 |
+|005|  ee8554c386f5  | 1 |  fe35b9b39e3f  | 1 |
+|006|  edfe43034076  | 1 |  fde534078a52  | 1 |
+|007|  ec53c0d693e2  | 1 |  fcfadbcbccf0  | 1 |
+|008|  e340b19f920d  | 1 |  f3db40bfc370  | 1 |
+|009|  e2a520e6e797  | 1 |  f23de56b1c0c  | 1 |
+|010|  e1ed0cf52b3a  | 1 |  f1b8610babf4  | 1 |
+|011|  e0d334eca25c  | 1 |  f0e2c3dce7be  | 1 |
+|012|  e7ab49ec20b4  | 1 |  f7d3a6d385a6  | 1 |
+|013|  e6a842c1e725  | 1 |  f62cbf3fbae8  | 1 |
+|014|  e54a184b2f0b  | 1 |  f5e3c3231308  | 1 |
+|015|  e4789ea004d9  | 1 |  f44dad1916d1  | 1 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+|-----------------------------------------|
+|------ Reading sector access bits...-----|
+|-----------------------------------------|
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+#db# READ BLOCK FINISHED
+|-----------------------------------------|
+|----- Dumping all blocks to file... -----|
+|-----------------------------------------|
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  1.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  1.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  1.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  1.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  2.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  2.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  2.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  2.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  3.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  3.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  3.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  3.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  4.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  4.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  4.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  4.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  5.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  5.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  5.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  5.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  6.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  6.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  6.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  6.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  7.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  7.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  7.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  7.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  8.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  8.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  8.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  8.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  9.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  9.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  9.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  9.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 10.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 10.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 10.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 10.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 11.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 11.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 11.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 11.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 12.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 12.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 12.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 12.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 13.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 13.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 13.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 13.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 14.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 14.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 14.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 14.
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector 15.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector 15.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector 15.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector 15.
+Dumped 64 blocks (1024 bytes) to file dumpdata.bin
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:2 key type:B key:F9 BC CC D2 9F 3D  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 60 00 00 00 9F FF FF FF 60 00 00 00 09 F6 09 F6 
+data   : 90 00 00 00 6F FF FF FF 90 00 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+e.lua                 A script file
+ndef_dump.lua         A script file
+cmdline.lua           A script file
+htmldump.lua          A script file
+legic.lua             A script file
+test_t55x7_psk.lua    A script file
+tnp3dump.lua          A script file
+dumptoemul.lua        A script file
+tnp3clone.lua         A script file
+didump.lua            A script file
+calypso.lua           A script file
+test_t55x7_fsk.lua    A script file
+mfkeys.lua            A script file
+dumptoemul-mfu.lua    A script file
+emul2dump.lua         A script file
+test_t55x7_bi.lua     A script file
+legic_buffer2card.lua A script file
+accesscalc.lua        A script file
+hf_read.lua           A script file
+calc_ev1_it.lua       A script file
+test_t55x7_ask.lua    A script file
+remagic.lua           A script file
+emul2html.lua         A script file
+mifare_autopwn.lua    A script file
+parameters.lua        A script file
+14araw.lua            A script file
+Legic_clone.lua       A script file
+tnp3sim.lua           A script file
+calc_mizip.lua        A script file
+formatMifare.lua      A script file
+tracetest.lua         A script file
+insertcoin.lua        A script file
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+--block no:8, key type:B, key:F9 BC CC D2 9F 3D 
+--data: B8 0B 00 00 47 F4 FF FF B8 0B 00 00 09 F6 09 F6 
+#db# WRITE BLOCK FINISHED
+isOk:01

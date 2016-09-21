@@ -1,0 +1,78 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+bootphase1       0x0000000000100000 0x0000000000000200
+bootphase2       0x0000000000100200 0x0000000000001e00
+osimage          0x0000000000102000 0x000000000003e000
+ram              0x0000000000200000 0x000000000000ffe0
+commonarea       0x000000000020ffe0 0x0000000000000020
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x00000000001001fc                _bootphase1_version_pointer = ((ORIGIN (bootphase1) + 0x200) - 0x4)
+                0x0000000000102000                _osimage_entry = ORIGIN (osimage)
+                0x0000000000100000                _bootrom_start = ORIGIN (bootphase1)
+                0x0000000000102000                _bootrom_end = (ORIGIN (bootphase2) + 0x1e00)
+                0x0000000000100000                _flash_start = ORIGIN (bootphase1)
+                0x0000000000140000                _flash_end = (ORIGIN (osimage) + 0x3e000)
+                0x000000000020ffd8                _stack_end = ((ORIGIN (ram) + 0xffe0) - 0x8)
+
+.start
+ *(.startos)
+
+.text           0x0000000000102000    0x309e8
+ *(stage1_image)
+ stage1_image   0x0000000000102000    0x309e8 obj/fullimage.nodata.o
+                0x0000000000102000                _binary_obj_fullimage_nodata_bin_start
+                0x00000000001329e8                _binary_obj_fullimage_nodata_bin_end
+ *(.text)
+ *(.text.*)
+ *(.eh_frame)
+ *(.glue_7)
+ .glue_7        0x00000000001329e8        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000001329e8        0x0 linker stubs
+
+.vfp11_veneer   0x00000000001329e8        0x0
+ .vfp11_veneer  0x00000000001329e8        0x0 linker stubs
+
+.v4_bx          0x00000000001329e8        0x0
+ .v4_bx         0x00000000001329e8        0x0 linker stubs
+
+.rodata         0x00000000001329e8        0x0
+ *(.rodata)
+ *(.rodata.*)
+ *(fpga_all_bit.data)
+ *(.version_information)
+                0x00000000001329e8                . = ALIGN (0x8)
+
+.data           0x0000000000200000     0x1a68 load address 0x00000000001329e8
+ *(compressed_data)
+ compressed_data
+                0x0000000000200000     0x1a66 obj/fullimage.data.o
+                0x0000000000200000                _binary_obj_fullimage_data_bin_z_start
+                0x0000000000201a66                _binary_obj_fullimage_data_bin_z_end
+ *(.data)
+ *(.data.*)
+ *(.ramfunc)
+                0x0000000000201a68                . = ALIGN (0x4)
+ *fill*         0x0000000000201a66        0x2 
+                0x00000000001329e8                __data_src_start__ = LOADADDR (.data)
+                0x0000000000200000                __data_start__ = ADDR (.data)
+                0x0000000000201a68                __data_end__ = (__data_start__ + SIZEOF (.data))
+                0x0000000000032450                __os_size__ = ((SIZEOF (.text) + SIZEOF (.data)) + SIZEOF (.rodata))
+
+.bss            0x0000000000201a68        0x0
+                0x0000000000201a68                __bss_start__ = .
+ *(.bss)
+ *(.bss.*)
+                0x0000000000201a68                . = ALIGN (0x4)
+                0x0000000000201a68                __bss_end__ = .
+
+.commonarea
+ *(.commonarea)
+LOAD obj/fullimage.nodata.o
+LOAD obj/fullimage.data.o
+OUTPUT(obj/fullimage.elf elf32-littlearm)

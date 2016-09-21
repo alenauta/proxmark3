@@ -1,0 +1,3185 @@
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+help             This help
+14a              { ISO14443A RFIDs... }
+14b              { ISO14443B RFIDs... }
+15               { ISO15693 RFIDs... }
+epa              { German Identification Card... }
+legic            { LEGIC RFIDs... }
+iclass           { ICLASS RFIDs... }
+mf               { MIFARE RFIDs... }
+mfu              { MIFARE Ultralight RFIDs... }
+mfdes            { MIFARE Desfire RFIDs... }
+topaz            { TOPAZ (NFC Type 1) RFIDs... }
+tune             Continuously measure HF antenna tuning
+list             List protocol data in trace buffer
+search           Search for known HF tags [preliminary]
+snoop            <samples to skip (10000)> <triggers to skip (1)> Generic LF/HF Snoop in Testing stage
+List protocol data in trace buffer.
+Usage:  hf list <protocol> [f][c]
+    f      - show frame delay times as well
+    c      - mark CRC bytes
+Supported <protocol> values:
+    raw    - just show raw data without annotations
+    14a    - interpret data as iso14443a communications
+    14b    - interpret data as iso14443b communications
+    des 	- interpret data as DESFire communications
+    iclass - interpret data as iclass communications
+    topaz  - interpret data as topaz communications
+    7816   - interpret data as iso7816-4 communications
+    legic  - interpret data as LEGIC communications
+
+example:	hf list 14a f
+			hf list iclass
+
+ UID : 80 79 DC 1D 
+ATQA : 00 04
+ SAK : 08 [2]
+TYPE : NXP MIFARE CLASSIC 1k | Plus 2k SL1
+proprietary non iso14443-4 card found, RATS not supported
+Answers to magic commands (GEN1): NO
+
+Valid ISO14443-A Tag Found - Quiting Search
+
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Card isn't vulnerable to Darkside attack (its random number generator is not predictable).
+
+Usage:
+      hf mf hardnested <block number> <key A|B> <key (12 hex symbols)>
+                       <target block number> <target key A|B> [known target key (12 hex symbols)] [w] [s]
+  or  hf mf hardnested r [known target key]
+ 
+options:
+      h    this help
+      w    acquire nonces and write them to binary file nonces.bin
+      s    slower acquisition (required by some non standard cards)
+      r    read nonces.bin and start attack
+      t    tests?
+ 
+samples:
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w s
+      hf mf hardnested r
+      hf mf hardnested r a0a1a2a3a4a5
+ 
+Add the known target key to check if it is present in the remaining key space:
+      sample5: hf mf hardnested 0 A A0A1A2A3A4A5 4 A FFFFFFFFFFFF
+--target block no:  1, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 4592 nonces in 1,7 seconds (158228 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 0a...
+Bitslicing nonces...
+Starting 4 cracking threads to search 4 buckets containing a total of 48774919250 states...
+Success! Tested 2579935104 states, found 1 keys after 32 seconds
+
+Found key: a0a1a2a3a4a5
+
+--target block no:  0, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:0 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:1 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+--sector no:1 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:
+      hf mf hardnested <block number> <key A|B> <key (12 hex symbols)>
+                       <target block number> <target key A|B> [known target key (12 hex symbols)] [w] [s]
+  or  hf mf hardnested r [known target key]
+ 
+options:
+      h    this help
+      w    acquire nonces and write them to binary file nonces.bin
+      s    slower acquisition (required by some non standard cards)
+      r    read nonces.bin and start attack
+      t    tests?
+ 
+samples:
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w
+      hf mf hardnested 0 A FFFFFFFFFFFF 4 A w s
+      hf mf hardnested r
+      hf mf hardnested r a0a1a2a3a4a5
+ 
+Add the known target key to check if it is present in the remaining key space:
+      sample5: hf mf hardnested 0 A A0A1A2A3A4A5 4 A FFFFFFFFFFFF
+--target block no:  0, target key type:A, known target key: 0xa0a1a2a3a4a5, file action: read, Slow: No, Tests: 0 
+Could not open file nonces.bin
+--target block no:  1, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+--target block no:  1, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+--target block no:  1, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 93408 nonces in 118,2 seconds (47418 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 27 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 69...
+Bitslicing nonces...
+Starting 4 cracking threads to search 289 buckets containing a total of 754325430488 states...
+Success! Tested 3564707514 states, found 1 keys after 381 seconds
+
+Found key: 75f982c0be33
+
+help             This help
+14a              { ISO14443A RFIDs... }
+14b              { ISO14443B RFIDs... }
+15               { ISO15693 RFIDs... }
+epa              { German Identification Card... }
+legic            { LEGIC RFIDs... }
+iclass           { ICLASS RFIDs... }
+mf               { MIFARE RFIDs... }
+mfu              { MIFARE Ultralight RFIDs... }
+mfdes            { MIFARE Desfire RFIDs... }
+topaz            { TOPAZ (NFC Type 1) RFIDs... }
+tune             Continuously measure HF antenna tuning
+list             List protocol data in trace buffer
+search           Search for known HF tags [preliminary]
+snoop            <samples to skip (10000)> <triggers to skip (1)> Generic LF/HF Snoop in Testing stage
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  51548301e028  |  8079dc1d3861  |
+|001|  00b8382ab756  |  051784014012  |
+|002|  030100520085  |  090280040040  |
+|003|  8012048030a8  |  6d8501a02408  |
+|004|  9051f88501e0  |  80d1388601e0  |
+|005|  968601601204  |  6a9005ba8601  |
+|006|  9ca20f800561  |  04807aab9bb0  |
+|007|  428480050288  |  8008b6dd20d1  |
+|008|  04803fdc06bb  |  01a012040086  |
+|009|  d1548901e028  |  8079dc1d3861  |
+|010|  00855ae067d5  |  85178a018012  |
+|011|  030100520005  |  090280040040  |
+|012|  801204803b8f  |  6e8b01602408  |
+|013|  90d1f88b01e0  |  8051398c01e0  |
+|014|  978c01601204  |  6a9085ba8c01  |
+|015|  396d00708561  |  0480eaf450ca  |
+|---|----------------|----------------|
+Saved 64 blocks to file: 7257A7D005E182.eml
+#db# wupC1 error
+Cant get block: 0
+#db# wupC1 error
+Cant get block: 0
+Saved to file: dump.eml
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:0 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:1 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+--sector no:1 key type:B key:75 F9 82 C0 BE 33  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+--sector no:0 key type:B key:75 F9 82 C0 BE 33  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:0 key type:B key:75 F9 82 C0 BE 45  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+--target block no:  0, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 92960 nonces in 107,2 seconds (52006 nonces/minute)
+Number of first bytes with confidence > 95,0%: 14
+Time for generating key candidates list: 29 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 0c...
+Bitslicing nonces...
+Starting 4 cracking threads to search 289 buckets containing a total of 503691048408 states...
+Success! Tested 2620850384 states, found 1 keys after 549 seconds
+
+Found key: 75f982c0be33
+
+--target block no:  2, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 5040 nonces in 2,5 seconds (120582 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): a0...
+Bitslicing nonces...
+Starting 4 cracking threads to search 4 buckets containing a total of 47822552316 states...
+Success! Tested 1864464638 states, found 1 keys after 29 seconds
+
+Found key: a0a1a2a3a4a5
+
+--target block no:  3, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 4144 nonces in 1,9 seconds (130133 nonces/minute)
+Number of first bytes with confidence > 95,0%: 14
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): e7...
+Bitslicing nonces...
+Starting 4 cracking threads to search 4 buckets containing a total of 32965692002 states...
+Fail! Tested 2900920930 states, in 89 seconds
+--target block no:  3, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 4704 nonces in 1,8 seconds (160662 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 2 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 4f...
+Bitslicing nonces...
+Starting 4 cracking threads to search 4 buckets containing a total of 52010610848 states...
+Success! Tested 3355765518 states, found 1 keys after 37 seconds
+
+Found key: a0a1a2a3a4a5
+
+--target block no:  4, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 25200 nonces in 30,8 seconds (49037 nonces/minute)
+Number of first bytes with confidence > 95,0%: 12
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 7e...
+Bitslicing nonces...
+Starting 4 cracking threads to search 8 buckets containing a total of 922579162 states...
+Success! Tested 106786960 states, found 1 keys after 0 seconds
+
+Found key: 6430980e532c
+
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf chk <block number>|<*card memory> <key type (A/B/?)> [t|d] [<key (12 hex symbols)>] [<dic (*.dic)>]
+options:
+      h    this help
+      *    all sectors based on card memory, other values then below defaults to 1k
+      			0 - MINI(320 bytes)
+      			1 - 1K
+      			2 - 2K
+      			4 - 4K
+      d    write keys to binary file
+      t    write keys to emulator memory
+
+ 
+samples:
+      hf mf chk 0 A 1234567890ab keys.dic     -- target block 0, Key A
+      hf mf chk *1 ? t                        -- target all blocks, all keys, 1K, write to emul
+      hf mf chk *1 ? d                        -- target all blocks, all keys, 1K, write to file
+key[ 0] 75f982c0be33
+
+Time in checkkeys: 8093 ticks 1 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  75f982c0be33  | 1 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+key[ 0] 6430980e532c
+
+Time in checkkeys: 8141 ticks 0 seconds
+
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  6430980e532c  | 1 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+key[ 0] 6430980e532c
+
+Time in checkkeys: 7655 ticks 1 seconds
+
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  6430980e532c  | 1 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+key[ 0] 75f982c0be33
+
+Time in checkkeys: 8363 ticks 1 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  75f982c0be33  | 1 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  ffffffffffff  |  75f982c0be33  |
+|001|  6430980e532c  |  ffffffffffff  |
+|002|  ffffffffffff  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+key[ 0] a0a1a2a3a4a5
+
+Time in checkkeys: 8395 ticks 1 seconds
+
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  ffffffffffff  |
+|002|  ffffffffffff  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+--target block no:  4, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+#db# Authentication failed. Card timeout.
+#db# AcquireNonces: Auth1 error
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Auth2 error len=0
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Auth1 error
+#db# AcquireNonces: Auth1 error
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Auth1 error
+#db# AcquireNonces: Auth1 error
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+#db# AcquireNonces: Can't select card (UID)
+Acquired a total of 88368 nonces in 115,0 seconds (46102 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 10 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 7a...
+Bitslicing nonces...
+Starting 4 cracking threads to search 12 buckets containing a total of 542091106560 states...
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+--target block no:  4, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 82096 nonces in 101,9 seconds (48330 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 11 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): b2...
+Bitslicing nonces...
+Starting 4 cracking threads to search 12 buckets containing a total of 641471895460 states...
+Success! Tested 2289297528 states, found 1 keys after 666 seconds
+
+Found key: 744b0c2c0a08
+
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf chk <block number>|<*card memory> <key type (A/B/?)> [t|d] [<key (12 hex symbols)>] [<dic (*.dic)>]
+options:
+      h    this help
+      *    all sectors based on card memory, other values then below defaults to 1k
+      			0 - MINI(320 bytes)
+      			1 - 1K
+      			2 - 2K
+      			4 - 4K
+      d    write keys to binary file
+      t    write keys to emulator memory
+
+ 
+samples:
+      hf mf chk 0 A 1234567890ab keys.dic     -- target block 0, Key A
+      hf mf chk *1 ? t                        -- target all blocks, all keys, 1K, write to emul
+      hf mf chk *1 ? d                        -- target all blocks, all keys, 1K, write to file
+key[ 0] 744b0c2c0a08
+
+Time in checkkeys: 8335 ticks 1 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  744b0c2c0a08  | 1 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  d1858301e028  |  8079dc1d3861  |
+|001|  00c8de32ba0d  |  744b0c2c0a08  |
+|002|  030100520005  |  090280040040  |
+|003|  80120480f2e0  |  9f8501a02408  |
+|004|  a0d1298601e0  |  80516a8601e0  |
+|005|  c88601601204  |  7bf085eb8601  |
+|006|  deb919108592  |  048085a90f8b  |
+|007|  428480853388  |  8008b6dd2051  |
+|008|  04808a85c451  |  01a01204002b  |
+|009|  d1858901e028  |  8079dc1d3861  |
+|010|  00e209668640  |  05498a018012  |
+|011|  030100520085  |  090280040040  |
+|012|  401204802fed  |  9f8b01a02408  |
+|013|  60512a8c01e0  |  80d16a8c01e0  |
+|014|  c88c01601204  |  7bf005ec8c01  |
+|015|  29a6c8e00593  |  0480899a016f  |
+|---|----------------|----------------|
+key[ 0] 75f982c0be33
+
+Time in checkkeys: 16070 ticks 1 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  75f982c0be33  | 1 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  d1858301e028  |  75f982c0be33  |
+|001|  00c8de32ba0d  |  744b0c2c0a08  |
+|002|  030100520005  |  090280040040  |
+|003|  80120480f2e0  |  9f8501a02408  |
+|004|  a0d1298601e0  |  80516a8601e0  |
+|005|  c88601601204  |  7bf085eb8601  |
+|006|  deb919108592  |  048085a90f8b  |
+|007|  428480853388  |  8008b6dd2051  |
+|008|  04808a85c451  |  01a01204002b  |
+|009|  d1858901e028  |  8079dc1d3861  |
+|010|  00e209668640  |  05498a018012  |
+|011|  030100520085  |  090280040040  |
+|012|  401204802fed  |  9f8b01a02408  |
+|013|  60512a8c01e0  |  80d16a8c01e0  |
+|014|  c88c01601204  |  7bf005ec8c01  |
+|015|  29a6c8e00593  |  0480899a016f  |
+|---|----------------|----------------|
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  ffffffffffff  |  ffffffffffff  |
+|001|  ffffffffffff  |  ffffffffffff  |
+|002|  ffffffffffff  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+key[ 0] 75f982c0be33
+
+Time in checkkeys: 15853 ticks 1 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  75f982c0be33  | 1 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  ffffffffffff  |  75f982c0be33  |
+|001|  ffffffffffff  |  ffffffffffff  |
+|002|  ffffffffffff  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+key[ 0] 744b0c2c0a08
+
+Time in checkkeys: 15730 ticks 2 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  744b0c2c0a08  | 1 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  ffffffffffff  |  75f982c0be33  |
+|001|  ffffffffffff  |  744b0c2c0a08  |
+|002|  ffffffffffff  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+key[ 0] a0a1a2a3a4a5
+
+Time in checkkeys: 14889 ticks 1 seconds
+
+testing to read key B...
+Reading block 3
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  ffffffffffff  |  744b0c2c0a08  |
+|002|  ffffffffffff  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  ffffffffffff  |  744b0c2c0a08  |
+|002|  ffffffffffff  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+key[ 0] 6430980e532c
+
+Time in checkkeys: 15903 ticks 2 seconds
+
+testing to read key B...
+Reading block 7
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  6430980e532c  | 1 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  744b0c2c0a08  |
+|002|  ffffffffffff  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+--target block no:  8, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 34720 nonces in 38,2 seconds (54579 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 05...
+Bitslicing nonces...
+Starting 4 cracking threads to search 68 buckets containing a total of 5387060392 states...
+Success! Tested 809006160 states, found 1 keys after 15 seconds
+
+Found key: 67b5fc9416e2
+
+key[ 0] 67b5fc9416e2
+
+Time in checkkeys: 12502 ticks 1 seconds
+
+testing to read key B...
+Reading block 11
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  67b5fc9416e2  | 1 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  744b0c2c0a08  |
+|002|  67b5fc9416e2  |  ffffffffffff  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+--target block no:  8, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 4816 nonces in 1,3 seconds (217745 nonces/minute)
+Number of first bytes with confidence > 95,0%: 15
+Time for generating key candidates list: 7 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 9b...
+Bitslicing nonces...
+Starting 4 cracking threads to search 34 buckets containing a total of 92508587920 states...
+Success! Tested 2592524446 states, found 1 keys after 266 seconds
+
+Found key: 77cb9dd3cd83
+
+key[ 0] 77cb9dd3cd83
+
+Time in checkkeys: 17306 ticks 2 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  77cb9dd3cd83  | 1 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  744b0c2c0a08  |
+|002|  67b5fc9416e2  |  77cb9dd3cd83  |
+|003|  ffffffffffff  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+--target block no: 12, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 59808 nonces in 77,5 seconds (46305 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 7 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): fa...
+Bitslicing nonces...
+Starting 4 cracking threads to search 12 buckets containing a total of 152361910410 states...
+Success! Tested 1803559340 states, found 1 keys after 242 seconds
+
+Found key: 66e72c158cab
+
+key[ 0] 66e72c158cab
+
+Time in checkkeys: 16037 ticks 2 seconds
+
+testing to read key B...
+Reading block 15
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  66e72c158cab  | 1 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  744b0c2c0a08  |
+|002|  67b5fc9416e2  |  77cb9dd3cd83  |
+|003|  66e72c158cab  |  ffffffffffff  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+--target block no: 12, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 21168 nonces in 22,9 seconds (55436 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 2 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 23...
+Bitslicing nonces...
+Starting 4 cracking threads to search 4 buckets containing a total of 44916605960 states...
+Success! Tested 3030733196 states, found 1 keys after 58 seconds
+
+Found key: 76bd30168ee6
+
+key[ 0] 76bd30168ee6
+
+Time in checkkeys: 15278 ticks 2 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  76bd30168ee6  | 1 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  744b0c2c0a08  |
+|002|  67b5fc9416e2  |  77cb9dd3cd83  |
+|003|  66e72c158cab  |  76bd30168ee6  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+key[ 0] 76bd30168ee6
+
+Time in checkkeys: 15982 ticks 1 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  76bd30168ee6  | 1 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+key[ 0] a0a1a2a3a4a5
+
+Time in checkkeys: 15244 ticks 2 seconds
+
+testing to read key B...
+Reading block 3
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  744b0c2c0a08  |
+|002|  67b5fc9416e2  |  77cb9dd3cd83  |
+|003|  66e72c158cab  |  76bd30168ee6  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+|-----------------------------------------|
+|------ Reading sector access bits...-----|
+|-----------------------------------------|
+#db# READ BLOCK FINISHED
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  1. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  2. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  3. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  4. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  5. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  6. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  7. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  8. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  9. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 10. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 11. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 12. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 13. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 14. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 15. Trying with defaults...
+|-----------------------------------------|
+|----- Dumping all blocks to file... -----|
+|-----------------------------------------|
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  0.
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not read block  0 of sector  1
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  744b0c2c0a08  |
+|002|  67b5fc9416e2  |  77cb9dd3cd83  |
+|003|  66e72c158cab  |  76bd30168ee6  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:0 key type:B key:75 F9 82 C0 BE 33  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:1 key type:B key:74 4B 0C 2C 0A 08  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 00 00 58 E6 0F 00 00 00 00 00 00 00 00 00 00 B5 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0B 
+data   : 11 51 1F 21 00 00 00 00 00 00 00 00 9E 00 00 A8 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:1 key type:A key:64 30 98 0E 53 2C  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 00 00 58 E6 0F 00 00 00 00 00 00 00 00 00 00 B5 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0B 
+data   : 11 51 1F 21 00 00 00 00 00 00 00 00 9E 00 00 A8 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+key[ 0] 6430980e532c
+
+Time in checkkeys: 16065 ticks 1 seconds
+
+testing to read key B...
+Reading block 7
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  6430980e532c  | 1 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+Key type must be A , B or ?
+key[ 0] 6430980e532c
+
+Time in checkkeys: 733 ticks 0 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+
+key[ 0] 6430980e532c
+File: d: not found or locked.
+Usage:  hf mf chk <block number>|<*card memory> <key type (A/B/?)> [t|d] [<key (12 hex symbols)>] [<dic (*.dic)>]
+options:
+      h    this help
+      *    all sectors based on card memory, other values then below defaults to 1k
+      			0 - MINI(320 bytes)
+      			1 - 1K
+      			2 - 2K
+      			4 - 4K
+      d    write keys to binary file
+      t    write keys to emulator memory
+
+ 
+samples:
+      hf mf chk 0 A 1234567890ab keys.dic     -- target block 0, Key A
+      hf mf chk *1 ? t                        -- target all blocks, all keys, 1K, write to emul
+      hf mf chk *1 ? d                        -- target all blocks, all keys, 1K, write to file
+key[ 0] a0a1a2a3a4a5
+File: d: not found or locked.
+key[ 0] a0a1a2a3a4a5
+
+Time in checkkeys: 451 ticks 0 seconds
+
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+
+key[ 0] a0a1a2a3a4a5
+
+Time in checkkeys: 411 ticks 0 seconds
+
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+Usage:   hf mf dump [card memory]
+  [card memory]: 0 = 320 bytes (Mifare Mini), 1 = 1K (default), 2 = 2K, 4 = 4K
+
+Samples: hf mf dump
+         hf mf dump 4
+File reading error.
+File reading error.
+File reading error.
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  a0a1a2a3a4a5  |  75f982c0be33  |
+|001|  6430980e532c  |  744b0c2c0a08  |
+|002|  67b5fc9416e2  |  77cb9dd3cd83  |
+|003|  66e72c158cab  |  76bd30168ee6  |
+|004|  ffffffffffff  |  ffffffffffff  |
+|005|  ffffffffffff  |  ffffffffffff  |
+|006|  ffffffffffff  |  ffffffffffff  |
+|007|  ffffffffffff  |  ffffffffffff  |
+|008|  ffffffffffff  |  ffffffffffff  |
+|009|  ffffffffffff  |  ffffffffffff  |
+|010|  ffffffffffff  |  ffffffffffff  |
+|011|  ffffffffffff  |  ffffffffffff  |
+|012|  ffffffffffff  |  ffffffffffff  |
+|013|  ffffffffffff  |  ffffffffffff  |
+|014|  ffffffffffff  |  ffffffffffff  |
+|015|  ffffffffffff  |  ffffffffffff  |
+|---|----------------|----------------|
+--target block no: 16, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 64624 nonces in 88,0 seconds (44054 nonces/minute)
+Number of first bytes with confidence > 95,0%: 14
+Time for generating key candidates list: 23 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): c2...
+Bitslicing nonces...
+Starting 4 cracking threads to search 36 buckets containing a total of 579169632782 states...
+Success! Tested 2888427218 states, found 1 keys after 716 seconds
+
+Found key: 61688b7e7f09
+
+File reading error.
+help             This help. Use '<command> help' for details of a particular command.
+analyse          { Analyse bytes... }
+data             { Plot window / data buffer manipulation... }
+hf               { High Frequency commands... }
+hw               { Hardware commands... }
+lf               { Low Frequency commands... }
+reveng           Crc calculations from the software reveng 1.40
+script           { Scripting commands }
+quit             Exit program
+exit             Exit program
+Usage:   hf mf dump [card memory]
+  [card memory]: 0 = 320 bytes (Mifare Mini), 1 = 1K (default), 2 = 2K, 4 = 4K
+
+Samples: hf mf dump
+         hf mf dump 4
+File reading error.
+File reading error.
+key[ 0] 61688b7e7f09
+
+Time in checkkeys: 16754 ticks 1 seconds
+
+testing to read key B...
+Reading block 19
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  61688b7e7f09  | 1 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+|-----------------------------------------|
+|------ Reading sector access bits...-----|
+|-----------------------------------------|
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  0. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  1. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  2. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  3. Trying with defaults...
+#db# READ BLOCK FINISHED
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  5. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  6. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  7. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  8. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  9. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 10. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 11. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 12. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 13. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 14. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 15. Trying with defaults...
+|-----------------------------------------|
+|----- Dumping all blocks to file... -----|
+|-----------------------------------------|
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not read block  0 of sector  0
+key[ 0] 6430980e532c
+
+Time in checkkeys: 16002 ticks 1 seconds
+
+testing to read key B...
+Reading block 7
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  6430980e532c  | 1 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+key[ 0] 75f982c0be33
+
+Time in checkkeys: 16593 ticks 2 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  75f982c0be33  | 1 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+|-----------------------------------------|
+|------ Reading sector access bits...-----|
+|-----------------------------------------|
+#db# READ BLOCK FINISHED
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  1. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  2. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  3. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  4. Trying with defaults...
+|-----------------------------------------|
+|----- Dumping all blocks to file... -----|
+|-----------------------------------------|
+#db# READ BLOCK FINISHED
+Successfully read block  0 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  1 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  2 of sector  0.
+#db# READ BLOCK FINISHED
+Successfully read block  3 of sector  0.
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not read block  0 of sector  1
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf eget <block number>
+ sample: hf mf eget 0 
+
+data[  0]:E6 84 87 F3 16 88 04 00 46 8E 45 55 4D 70 41 04 
+
+data[  3]:A0 A1 A2 A3 A4 A5 FF 07 80 69 75 F9 82 C0 BE 33 
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf rdbl    <block number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdbl 0 A FFFFFFFFFFFF 
+--block no:0, key type:A, key:A0 A1 A2 A3 A4 A5  
+#db# READ BLOCK FINISHED
+isOk:01 data:80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+--block no:1, key type:A, key:A0 A1 A2 A3 A4 A5  
+#db# READ BLOCK FINISHED
+isOk:01 data:7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+--block no:2, key type:A, key:A0 A1 A2 A3 A4 A5  
+#db# READ BLOCK FINISHED
+isOk:01 data:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+--block no:3, key type:A, key:A0 A1 A2 A3 A4 A5  
+#db# READ BLOCK FINISHED
+isOk:01 data:00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+
+data[  3]:A0 A1 A2 A3 A4 A5 FF 07 80 69 75 F9 82 C0 BE 33 
+--block no:3, key type:A, key:A0 A1 A2 A3 A4 A5  
+#db# READ BLOCK FINISHED
+isOk:01 data:00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+
+ UID : 80 79 DC 1D 
+ATQA : 00 04
+ SAK : 08 [2]
+TYPE : NXP MIFARE CLASSIC 1k | Plus 2k SL1
+proprietary non iso14443-4 card found, RATS not supported
+Answers to magic commands (GEN1): NO
+
+Valid ISO14443-A Tag Found - Quiting Search
+
+--block no:0, key type:A, key:A0 A1 A2 A3 A4 A5  
+#db# READ BLOCK FINISHED
+isOk:01 data:80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+--sector no:0 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+--sector no:0 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+Key type must be A or B
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:1 key type:A key:64 30 98 0E 53 2C  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 00 00 58 E6 0F 00 00 00 00 00 00 00 00 00 00 B5 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0B 
+data   : 11 51 1F 21 00 00 00 00 00 00 00 00 9E 00 00 A8 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+Key must include 12 HEX symbols
+--sector no:2 key type:A key:67 B5 FC 94 16 E2  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : C7 00 00 00 38 FF FF FF C7 00 00 00 09 F6 09 F6 
+data   : EF 00 00 00 10 FF FF FF EF 00 00 00 09 F6 09 F6 
+data   : 00 00 00 00 FF FF FF FF 00 00 00 00 0A F5 0A F5 
+trailer: 00 00 00 00 00 00 08 77 8F 00 00 00 00 00 00 00 
+--target block no: 16, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 15232 nonces in 16,0 seconds (57166 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 1 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 07...
+Bitslicing nonces...
+Starting 4 cracking threads to search 16 buckets containing a total of 112352140 states...
+Success! Tested 45282036 states, found 1 keys after 0 seconds
+
+Found key: 71fa8ba1155d
+
+Prox/RFID mark3 RFID instrument
+bootrom: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:50
+os: /master/v1.1.0-1502-ge619ddc-suspect 2016-09-05 10:13:52
+LF FPGA image built for 2s30vq100 on 2015/03/06 at 07:38:04
+HF FPGA image built for 2s30vq100 on 2015/11/ 2 at  9: 8: 8
+
+uC: AT91SAM7S512 Rev B
+Embedded Processor: ARM7TDMI
+Nonvolatile Program Memory Size: 512K bytes. Used: 214094 bytes (41%). Free: 310194 bytes (59%).
+Second Nonvolatile Program Memory Size: None
+Internal SRAM Size: 64K bytes
+Architecture Identifier: AT91SAM7Sxx Series
+Nonvolatile Program Memory Type: Embedded Flash Memory
+key[ 0] 71fa8ba1155d
+
+Time in checkkeys: 15381 ticks 2 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  71fa8ba1155d  | 1 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Printing keys to binary file dumpkeys.bin...
+Found keys have been dumped to file dumpkeys.bin. 0xffffffffffff has been inserted for unknown keys.
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  000000000000  |  000000000000  |
+|001|  000000000000  |  000000000000  |
+|002|  000000000000  |  000000000000  |
+|003|  000000000000  |  000000000000  |
+|004|  000000000000  |  000000000000  |
+|005|  000000000000  |  000000000000  |
+|006|  000000000000  |  000000000000  |
+|007|  000000000000  |  000000000000  |
+|008|  000000000000  |  000000000000  |
+|009|  000000000000  |  000000000000  |
+|010|  000000000000  |  000000000000  |
+|011|  000000000000  |  000000000000  |
+|012|  000000000000  |  000000000000  |
+|013|  000000000000  |  000000000000  |
+|014|  000000000000  |  000000000000  |
+|015|  000000000000  |  000000000000  |
+|---|----------------|----------------|
+key[ 0] 71fa8ba1155d
+
+Time in checkkeys: 16340 ticks 2 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|001|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|002|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|003|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|004|  ffffffffffff  | 0 |  71fa8ba1155d  | 1 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+Usage:  hf mf chk <block number>|<*card memory> <key type (A/B/?)> [t|d] [<key (12 hex symbols)>] [<dic (*.dic)>]
+options:
+      h    this help
+      *    all sectors based on card memory, other values then below defaults to 1k
+      			0 - MINI(320 bytes)
+      			1 - 1K
+      			2 - 2K
+      			4 - 4K
+      d    write keys to binary file
+      t    write keys to emulator memory
+
+ 
+samples:
+      hf mf chk 0 A 1234567890ab keys.dic     -- target block 0, Key A
+      hf mf chk *1 ? t                        -- target all blocks, all keys, 1K, write to emul
+      hf mf chk *1 ? d                        -- target all blocks, all keys, 1K, write to file
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+
+Time in checkkeys: 46254 ticks 7 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+--target block no: 20, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 53536 nonces in 76,0 seconds (42274 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 4 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 1c...
+Bitslicing nonces...
+Starting 4 cracking threads to search 24 buckets containing a total of 14872754350 states...
+Success! Tested 3641774870 states, found 1 keys after 22 seconds
+
+Found key: 60f205c2d44b
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+
+Time in checkkeys: 49566 ticks 8 seconds
+
+testing to read key B...
+Reading block 23
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  ffffffffffff  | 0 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+--target block no: 20, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 76384 nonces in 97,9 seconds (46822 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 15 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): 12...
+Bitslicing nonces...
+Starting 4 cracking threads to search 68 buckets containing a total of 193010316844 states...
+Success! Tested 3127798996 states, found 1 keys after 83 seconds
+
+Found key: 7042e8b2cc81
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+
+Time in checkkeys: 50168 ticks 8 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+Usage:
+ all sectors:  hf mf nested  <card memory> <block number> <key A/B> <key (12 hex symbols)> [t,d]
+ one sector:   hf mf nested  o <block number> <key A/B> <key (12 hex symbols)>
+               <target block number> <target key A/B> [t]
+options:
+      h    this help
+      card memory - 0 - MINI(320 bytes), 1 - 1K, 2 - 2K, 4 - 4K, <other> - 1K
+      t    transfer keys into emulator memory
+      d    write keys to binary file
+ 
+samples:
+      hf mf nested 1 0 A FFFFFFFFFFFF 
+      hf mf nested 1 0 A FFFFFFFFFFFF t 
+      hf mf nested 1 0 A FFFFFFFFFFFF d 
+      hf mf nested o 0 A FFFFFFFFFFFF 4 A
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf ecfill <key A/B> [card memory]
+  [card memory]: 0 = 320 bytes (Mifare Mini), 1 = 1K (default), 2 = 2K, 4 = 4K
+
+samples:  hf mf ecfill A
+          hf mf ecfill A 4
+Read card and transfer its data to emulator memory.
+Keys must be laid in the emulator memory. 
+
+#db# Authentication failed. Card timeout.
+#db# Sector[ 6]. Auth nested error
+#db# EMUL FILL SECTORS FINISHED
+#db# Authentication failed. Card timeout.
+#db# Sector[ 6]. Auth nested error
+#db# EMUL FILL SECTORS FINISHED
+Usage:
+ all sectors:  hf mf nested  <card memory> <block number> <key A/B> <key (12 hex symbols)> [t,d]
+ one sector:   hf mf nested  o <block number> <key A/B> <key (12 hex symbols)>
+               <target block number> <target key A/B> [t]
+options:
+      h    this help
+      card memory - 0 - MINI(320 bytes), 1 - 1K, 2 - 2K, 4 - 4K, <other> - 1K
+      t    transfer keys into emulator memory
+      d    write keys to binary file
+ 
+samples:
+      hf mf nested 1 0 A FFFFFFFFFFFF 
+      hf mf nested 1 0 A FFFFFFFFFFFF t 
+      hf mf nested 1 0 A FFFFFFFFFFFF d 
+      hf mf nested o 0 A FFFFFFFFFFFF 4 A
+Target key type must be A or B
+Tag isn't vulnerable to Nested Attack (its random number generator is not predictable).
+
+|---|----------------|----------------|
+|sec|key A           |key B           |
+|---|----------------|----------------|
+|000|  000000000000  |  000000000000  |
+|001|  000000000000  |  000000000000  |
+|002|  000000000000  |  000000000000  |
+|003|  000000000000  |  000000000000  |
+|004|  000000000000  |  000000000000  |
+|005|  000000000000  |  000000000000  |
+|006|  000000000000  |  000000000000  |
+|007|  000000000000  |  000000000000  |
+|008|  000000000000  |  000000000000  |
+|009|  000000000000  |  000000000000  |
+|010|  000000000000  |  000000000000  |
+|011|  000000000000  |  000000000000  |
+|012|  000000000000  |  000000000000  |
+|013|  000000000000  |  000000000000  |
+|014|  000000000000  |  000000000000  |
+|015|  000000000000  |  000000000000  |
+|---|----------------|----------------|
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+
+Time in checkkeys: 51915 ticks 8 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+|-----------------------------------------|
+|------ Reading sector access bits...-----|
+|-----------------------------------------|
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  0. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  1. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  2. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  3. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  4. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  5. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  6. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  7. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  8. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  9. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 10. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 11. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 12. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 13. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 14. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 15. Trying with defaults...
+|-----------------------------------------|
+|----- Dumping all blocks to file... -----|
+|-----------------------------------------|
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not read block  0 of sector  0
+|-----------------------------------------|
+|------ Reading sector access bits...-----|
+|-----------------------------------------|
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  0. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  1. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  2. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  3. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  4. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  5. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  6. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  7. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  8. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  9. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 10. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 11. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 12. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 13. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 14. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 15. Trying with defaults...
+|-----------------------------------------|
+|----- Dumping all blocks to file... -----|
+|-----------------------------------------|
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not read block  0 of sector  0
+|-----------------------------------------|
+|------ Reading sector access bits...-----|
+|-----------------------------------------|
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  0. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  1. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  2. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  3. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  4. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  5. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  6. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  7. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  8. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector  9. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 10. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 11. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 12. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 13. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 14. Trying with defaults...
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not get access rights for sector 15. Trying with defaults...
+|-----------------------------------------|
+|----- Dumping all blocks to file... -----|
+|-----------------------------------------|
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ BLOCK FINISHED
+Could not read block  0 of sector  0
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:5 key type:A key:60 F2 05 C2 D4 4B  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:6 key type:A key:FF FF FF FF FF FF  
+ 
+#db# Authentication failed. Card timeout.
+#db# Auth error
+#db# READ SECTOR FINISHED
+isOk:00
+help             This help
+dbg              Set default debug mode
+rdbl             Read MIFARE classic block
+rdsc             Read MIFARE classic sector
+dump             Dump MIFARE classic tag to binary file
+restore          Restore MIFARE classic binary file to BLANK tag
+wrbl             Write MIFARE classic block
+chk              Check keys
+mifare           Darkside attack. read parity error messages.
+nested           Nested attack. Test nested authentication
+hardnested       Nested attack for hardened Mifare cards
+keybrute         J_Run's 2nd phase of multiple sector nested authentication key recovery
+sniff            Sniff card-reader communication
+sim              Simulate MIFARE card
+eclr             Clear simulator memory block
+eget             Get simulator memory block
+eset             Set simulator memory block
+eload            Load from file emul dump
+esave            Save to file emul dump
+ecfill           Fill simulator memory with help of keys from simulator
+ekeyprn          Print keys from simulator memory
+csetuid          Set UID for magic Chinese card
+csetblk          Write block - Magic Chinese card
+cgetblk          Read block - Magic Chinese card
+cgetsc           Read sector - Magic Chinese card
+cload            Load dump into magic Chinese card
+csave            Save dump from magic Chinese card into file or emulator
+decrypt          [nt] [ar_enc] [at_enc] [data] - to decrypt snoop or trace
+Saved 64 blocks to file: 00000000000000.eml
+Usage:  hf mf rdsc    <sector number> <key A/B> <key (12 hex symbols)>
+        sample: hf mf rdsc 0 A FFFFFFFFFFFF 
+--sector no:0 key type:A key:A0 A1 A2 A3 A4 A5  
+ 
+#db# READ SECTOR FINISHED
+isOk:01
+data   : 80 79 DC 1D 38 88 04 00 C2 06 00 00 00 00 00 13 
+data   : 7B 00 26 88 26 88 00 00 00 00 00 00 00 00 00 00 
+data   : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+trailer: 00 00 00 00 00 00 78 77 88 00 00 00 00 00 00 00 
+Saved 64 blocks to file: 00000000000000.eml
+Usage:  hf mf eset <block number> <block data (32 hex symbols)>
+ sample: hf mf eset 1 000102030405060708090a0b0c0d0e0f 
+#db# wupC1 error
+Cant get block: 0
+#db# wupC1 error
+Cant get block: 0
+Saved to file: dump.eml
+--target block no: 24, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 34048 nonces in 44,6 seconds (45782 nonces/minute)
+Number of first bytes with confidence > 95,0%: 14
+Time for generating key candidates list: 3 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): a6...
+Bitslicing nonces...
+Starting 4 cracking threads to search 24 buckets containing a total of 3692190876 states...
+Success! Tested 864928546 states, found 1 keys after 2 seconds
+
+Found key: 6389120212c8
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+
+Time in checkkeys: 50288 ticks 8 seconds
+
+testing to read key B...
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+check key[12] 6389120212c8
+
+Time in checkkeys: 50900 ticks 9 seconds
+
+testing to read key B...
+Reading block 27
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  6389120212c8  | 1 |  ffffffffffff  | 0 |
+|007|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+--target block no: 24, target key type:B, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 3584 nonces in 1,3 seconds (162331 nonces/minute)
+Number of first bytes with confidence > 95,0%: 15
+Time for generating key candidates list: 4 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): b9...
+Bitslicing nonces...
+Starting 4 cracking threads to search 34 buckets containing a total of 25855176976 states...
+Success! Tested 2821536188 states, found 1 keys after 60 seconds
+
+Found key: 73926506d8ec
+
+--target block no: 28, target key type:A, known target key: 0x000000000000 (not set), file action: none, Slow: No, Tests: 0 
+Acquired a total of 28000 nonces in 31,2 seconds (53813 nonces/minute)
+Number of first bytes with confidence > 95,0%: 13
+Time for generating key candidates list: 6 seconds
+Brute force phase starting.
+Using 128-bit bitslices
+Bitslicing best_first_byte^uid[3] (rollback byte): ee...
+Bitslicing nonces...
+Starting 4 cracking threads to search 68 buckets containing a total of 11491432624 states...
+Success! Tested 140718542 states, found 1 keys after 0 seconds
+
+Found key: 622491d7c15c
+
+check key[ 0] a0a1a2a3a4a5
+check key[ 1] 75f982c0be33
+check key[ 2] 6430980e532c
+check key[ 3] 744b0c2c0a08
+check key[ 4] 67b5fc9416e2
+check key[ 5] 77cb9dd3cd83
+check key[ 6] 66e72c158cab
+check key[ 7] 76bd30168ee6
+check key[ 8] 61688b7e7f09
+check key[ 9] 71fa8ba1155d
+check key[10] 60f205c2d44b
+check key[11] 7042e8b2cc81
+check key[12] 6389120212c8
+check key[13] 73926506d8ec
+check key[14] 622491d7c15c
+
+Time in checkkeys: 52012 ticks 9 seconds
+
+testing to read key B...
+Reading block 31
+#db# READ BLOCK FINISHED
+|---|----------------|---|----------------|---|
+|sec|key A           |res|key B           |res|
+|---|----------------|---|----------------|---|
+|000|  a0a1a2a3a4a5  | 1 |  75f982c0be33  | 1 |
+|001|  6430980e532c  | 1 |  744b0c2c0a08  | 1 |
+|002|  67b5fc9416e2  | 1 |  77cb9dd3cd83  | 1 |
+|003|  66e72c158cab  | 1 |  76bd30168ee6  | 1 |
+|004|  61688b7e7f09  | 1 |  71fa8ba1155d  | 1 |
+|005|  60f205c2d44b  | 1 |  7042e8b2cc81  | 1 |
+|006|  6389120212c8  | 1 |  73926506d8ec  | 1 |
+|007|  622491d7c15c  | 1 |  ffffffffffff  | 0 |
+|008|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|009|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|010|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|011|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|012|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|013|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|014|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|015|  ffffffffffff  | 0 |  ffffffffffff  | 0 |
+|---|----------------|---|----------------|---|
+Found keys have been transferred to the emulator memory
+
+help             This help
+list             List available scripts
+run              <name> -- Execute a script
+Couldn't open the scripts-directory
+help             This help
+list             List available scripts
+run              <name> -- Execute a script

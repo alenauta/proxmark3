@@ -1,0 +1,307 @@
+script
+script list
+script run
+script run mfkeys
+script run mfkeys
+pwd
+hf mf hardnested 0 A a0a1a2a3a4a5 28 B
+exit
+hf mf hardnested
+hf mf chk *1 ? d ste/keys.dic
+hf mf hardnested 0 A a0a1a2a3a4a5
+hf mf hardnested 0 A a0a1a2a3a4a5 40 A 4 28
+exit
+quit
+hf mf hardnested 0 A a0a1a2a3a4a5 42 A 4 32 w
+hf mf hardnested
+hf mf hardnested r
+hf mf chk *1 ? d ste/keys.dic
+hf mf hardnested 0 A a0a1a2a3a4a5 42 B 4 32 w
+hf mf chk *1 ? d ste/keys.dic
+hf mf dump
+hf 14a reader
+hf 14a reader
+hf mf
+hf mf cload
+script
+script list
+script run dumptoemul
+hf mf cload ste/8079DC1D.eml
+hf mf cload ste/8079DC1D
+hf 14a reader
+quit
+hf mf
+hf mf rdsc
+hf mf rdsc 1
+hf mf rdsc 1 A 6430980e532c
+hf mf rdsc 1 A 6430980e532f
+hf mf wrbl
+hf mf wrbl 8 A 67b5fc9416e2 c700000038ffffffc700000009f609f6
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf dbg 4
+hf mf wrbl 8 A 67b5fc9416e2 c700000038ffffffc700000009f609f6
+hf mf wrbl 8 B 77cb9dd3cd83 c700000038ffffffc700000009f609f6
+hf mf dbg 2
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf wrbl 8 B 77cb9dd3cd83 600100009ffeffff6001000009f609f6
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf wrbl 9 B 77cb9dd3cd83 8801000077feffff8801000009f609f6
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf rdsc 1 A 6430980e532c
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf rdsc 1 A 6430980e532c
+hf mf wrbl 8 B 77cb9dd3cd83 600100009ffeffff6001000009f609f6
+hf mf wrbl 8 B 77cb9dd3cd83 610100009ffeffff6001000009f609f6
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf wrbl 8 B 77cb9dd3cd83 610100009efeffff6001000009f609f6
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf wrbl 8 B 77cb9dd3cd83 610100009efeffff6101000009f609f6
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf wrbl 8 B 77cb9dd3cd83 200300009efeffff2003000009f609f6
+hf mf wrbl 8 B 77cb9dd3cd83 20030000dffcffff2003000009f609f6
+script
+script list
+quit
+script list
+script run insertcoin
+script run insertcoin h
+script run insertcoin -h
+script run insertcoin
+script run insertcoin
+script run insertcoin
+script run insertcoin
+script run insertcoin
+script run insertcoin
+hf 14a reader
+lf
+d
+a
+h
+hw
+lf
+h
+lf
+lf read
+hw tune lf
+script run insertcoin
+script run insertcoin
+script run insertcoin
+script run insertcoin
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+script run insertcoin -d
+hf mf rdsc 2 A 67b5fc9416e2
+script run insertcoin -d
+hf mf rdsc 2 A 67b5fc9416e2
+script run insertcoin -d
+script run insertcoin -t A -k 12345678 -a 1234
+script run insertcoin -t A -k 12345678 -a 1234
+script run insertcoin -t A -k 12345678 -a 1234 -d
+script run insertcoin -t A -k 12345678 -a 1234 -d
+script run insertcoin -t A -k 12345678 -a 1234
+script run insertcoin -t A -k 12345678 -a 1234
+script run insertcoin -t A -k 12345678 -a 1234 -d
+script run insertcoin -h
+script run insertcoin -t B -k 77cb9dd3cd83 -a 800 -d
+script run insertcoin -t B -k 77cb9dd3cd83 -a 1000 -d
+script run insertcoin -t B -k 77cb9dd3cd83 -a 1000
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf rdsc 2 A 67b5fc9416e2
+hf mf rdsc 2 A 67b5fc9416e1
+hf mf
+hf mf cload
+hf mf cload sergio/A721824E
+hf mf rdsc 2 A 67b5fc9416e1
+hf mf rdsc 2 B c048bdae7e8d
+script run insertcoin -t B -k c048bdae7e8d -a 1000
+hf mf rdsc 2 B c048bdae7e8d
+script run insertcoin -t B -k c048bdae7e8d -a 10000
+hf mf rdsc 2 B c048bdae7e8d
+script run insertcoin -t B -k c048bdae7e8d -a 1000
+quit
+hf mh
+hf mf
+hf mf rdsc 0
+hf mf rdsc 0 A a0a1a2a3a4a5
+hf mf rdsc 0 B c27aa2bd0d3d
+hf mf rdsc 2 B c27aa2bd0d3d
+hf mf rdsc 2 B c048bdae7e8d
+hf mf
+hf mf wrbl
+hf mf wrbl 11 B c048bdae7e8d d036dce9a5ec08778f00c048bdae7e8e
+hf mf rdsc 2 B c048bdae7e8d
+hf mf rdsc 2 B c048bdae7e8e
+hf mf wrbl 11 B c048bdae7e8e d036dce9a5ec08778f00c048bdae7e8d
+hf mf rdsc 2 B c048bdae7e8e
+hf mf rdsc 2 B c048bdae7e8d
+hf mf rdbl
+script
+exit
+scriptlist
+script list
+exit
+script list
+script run accesscalc
+script run accesscalc -d
+script run accesscalc -d
+script run accesscalc -d
+script run accesscalc -d
+script run accesscalc -d
+script run accesscalc -s 2 -d
+script run accesscalc -d -s 2
+script run accesscalc -s 2
+script run accesscalc -d
+script run accesscalc -d
+script run accesscalc -s 2
+script run accesscalc -d -s 2
+script run accesscalc -d -s 2
+script run accesscalc -d -s 2
+script run accesscalc -h
+script run accesscalc -t B -k c048bdae7e8d -s 2
+script run accesscalc -t B -k c048bdae7e8d -s 2
+script run accesscalc -t B -k c048bdae7e8d -s 2 -d
+script run accesscalc -t B -k c048bdae7e8d -s 2 -d
+script run accesscalc -t B -k c048bdae7e8d -s 0 -d
+script run accesscalc -t B -k c048bdae7e8d -s 2 -d
+script run accesscalc -t B -k c048bdae7e8d -s 2 -d
+script run accesscalc -i 08 77 8F -d
+script run accesscalc -i 08 -d
+script run accesscalc -i 08 77 8F -d
+script run accesscalc -i 08 -d
+script run accesscalc -i "08 77 8F" -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f -d
+script run accesscalc -i 08778f
+script run accesscalc -i 08778f
+script run accesscalc -x 08778f
+script run accesscalc -h
+script run accesscalc -h
+script run accesscalc -h
+script run accesscalc -h
+script run accesscalc -x 08778f
+hf mf rdsc 2 B c048bdae7e8d
+hf mf wrbl 11 B c048bdae7e8d d036dce9a5ec19669e00c048bdae7e8d
+hf mf rdsc 2 B c048bdae7e8d
+hf mf wrbl 11 B c048bdae7e8d d036dce9a5ec08778f00c048bdae7e8d
+script run insertcoin
+script run insertcoin -h
+script run insertcoin -t B -k c048bdae7e8d -a 1000
+exit
+script run accesscalc -x 08778f
+hf mf wrbl 11 B c048bdae7e8d d036dce9a5ec09678f00c048bdae7e8d
+hf mf wrbl 11 B c048bdae7e8d d036dce9a5ec09678f00c048bdae7e8d
+exit
+hf mf wrbl 11 B c048bdae7e8d d036dce9a5ec09678f00c048bdae7e8d
+hf mf wrbl 11 B c048bdae7e8d d036dce9a5ec08778f00c048bdae7e8d
+script run insertcoin -t B -k c048bdae7e8d -a 2000
+quit
+hf mf reader
+hf 14a reader
+scripts
+script
+script list
+script run insertcoin
+script run insertcoin -h
+script run insertcoin -t B -k 77cb9dd3cd83 -a 3000
+script run insertcoin -t B -k c048bdae7e8d -a 3000
+exit
+lf
+lf search
+lf search
+lf
+lf em4x
+lf em4x em410xread
+lf em4x em410xread
+lf em4x em410xread
+lf em4x em410xdemod
+lf search
+lf em4x em410xwrite
+lf em4x em410xwrite 4A008F201C
+lf em4x em410xwrite 
+lf em4x em410xwrite 4A008F201C 1
+lf em4x em410xwrite 4A008F201C 0
+lf search
+lf em4x em410xwrite 4A008F201C 1
+lf search
+lf em4x em410xdemod 1
+lf em4x em410xdemod 1
+lf em4x em410xwrite 4A008F201C 1
+lf em4x em410xwatch
+lf em4x em410xsim 4A008F201C
+hw ver
+hw ver
+exit
+hw ver
+quit
+hf mf nested
+hf mf nested 1 0 A a0a1a2a3a4a5 t
+hf mf nested 1 0 A a0a1a2a3a4a5 d
+hf mf dump
+hf mf
+hf mf rdsc 2
+hf mf rdsc 2 B f9bcccd29f3d
+scripts list
+script list
+script
+script run insertcoin
+script run insertcoin -h
+script run insertcoin -t B -k f9bcccd29f3d -a 3000
+quit
